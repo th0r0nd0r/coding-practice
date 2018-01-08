@@ -38,6 +38,21 @@ Array.prototype.myReduce = function(op) {
 // write myFind(array, callback). It should return the first element for which
 // callback returns true, or undefined if none is found.
 
+const myFind = function (array, callback) {
+  let value = undefined;
+
+  array.forEach(
+    function(el) {
+      if (callback(el)) {
+        value = el;
+        return;
+      }
+    }
+  );
+
+  return value;
+};
+
 // write sumNPrimes(n)
 
 // write Function.prototype.myBind.
