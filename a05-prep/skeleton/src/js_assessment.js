@@ -2,9 +2,11 @@
 // (optional) end index.
 
 String.prototype.mySlice = function(start, end = this.length) {
-    for (let i = 0; i < end; i++) {
-      
+    const sliced = "";
+    for (let i = start; i < end; i++) {
+      sliced += this[i];
     }
+    return sliced;
 };
 
 // write Array.prototype.myReduce (analogous to Ruby's Array#inject).
