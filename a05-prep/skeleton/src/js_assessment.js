@@ -6,14 +6,19 @@ String.prototype.mySlice = function(start, end = this.length) {
     end = this.length;
   }
 
-    let sliced = "";
-    for (let i = start; i < end; i++) {
-      sliced += this[i];
-    }
-    return sliced;
+  let sliced = "";
+  for (let i = start; i < end; i++) {
+    sliced += this[i];
+  }
+  
+  return sliced;
 };
 
 // write Array.prototype.myReduce (analogous to Ruby's Array#inject).
+
+Array.prototype.myReduce = function(firstEl = this[0], op) {
+
+};
 
 // write Array.prototype.quickSort(comparator). Here's a quick refresher if
 // you've forgotten how quickSort works:
