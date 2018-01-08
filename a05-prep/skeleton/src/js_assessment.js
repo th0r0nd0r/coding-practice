@@ -16,8 +16,11 @@ String.prototype.mySlice = function(start, end = this.length) {
 
 // write Array.prototype.myReduce (analogous to Ruby's Array#inject).
 
-Array.prototype.myReduce = function(firstEl = this[0], op) {
+Array.prototype.myReduce = function(start = 0, op) {
+  let reduced = this[start];
+  for (let i = (start+1); i < this.length; i++) {
 
+  }
 };
 
 // write Array.prototype.quickSort(comparator). Here's a quick refresher if
