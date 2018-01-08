@@ -1,6 +1,12 @@
 // write String.prototype.mySlice. It should take a start index and an
 // (optional) end index.
 
+String.prototype.mySlice = function(start, end = this.length) {
+    for (let i = 0; i < end; i++) {
+      
+    }
+};
+
 // write Array.prototype.myReduce (analogous to Ruby's Array#inject).
 
 // write Array.prototype.quickSort(comparator). Here's a quick refresher if
