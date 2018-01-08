@@ -2,7 +2,11 @@
 // (optional) end index.
 
 String.prototype.mySlice = function(start, end = this.length) {
-    const sliced = "";
+  if (end > this.length) {
+    end = this.length;
+  }
+
+    let sliced = "";
     for (let i = start; i < end; i++) {
       sliced += this[i];
     }
