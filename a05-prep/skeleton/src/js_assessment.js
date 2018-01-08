@@ -16,9 +16,9 @@ String.prototype.mySlice = function(start, end = this.length) {
 
 // write Array.prototype.myReduce (analogous to Ruby's Array#inject).
 
-Array.prototype.myReduce = function(start = 0, op) {
-  let accum = this[start];
-  for (let i = (start+1); i < this.length; i++) {
+Array.prototype.myReduce = function(op) {
+  let accum = this[0];
+  for (let i = 1; i < this.length; i++) {
     accum = op(accum, this[i]);
   }
 
