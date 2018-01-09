@@ -69,9 +69,11 @@ const sumNPrimes = (n) => {
   const primes = [];
 
   while (primes.length < n) {
-    if (isPrime(n)) {
-      primes.push(n);
+    if (isPrime(i)) {
+      primes.push(i);
     }
+
+    i++;
   }
 
   const spy = {
