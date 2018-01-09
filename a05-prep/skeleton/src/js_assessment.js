@@ -55,8 +55,8 @@ const myFind = function (array, callback) {
 
 // write sumNPrimes(n)
 const isPrime = (n) => {
-  for (let i = 2; i < (n / 2); i++) {
-    if ((n / i) !== 0) {
+  for (let i = 2; i <= (n / 2); i++) {
+    if ((n / i) === 0) {
       return false;
     }
   }
@@ -65,7 +65,10 @@ const isPrime = (n) => {
 };
 
 const sumNPrimes = (n) => {
+  let i = 0;
+  const primes = [];
 
+  while
 };
 
 // write Function.prototype.myBind.
