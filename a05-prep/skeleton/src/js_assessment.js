@@ -68,7 +68,11 @@ const sumNPrimes = (n) => {
   let i = 0;
   const primes = [];
 
-  while
+  while (primes.length < n) {
+    if (isPrime(n)) {
+      primes.push(n);
+    }
+  }
 };
 
 // write Function.prototype.myBind.
