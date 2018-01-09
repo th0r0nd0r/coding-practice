@@ -65,6 +65,10 @@ const isPrime = (n) => {
 };
 
 const sumNPrimes = (n) => {
+  if (n === 0) {
+    return 0;
+  }
+
   let i = 0;
   const primes = [];
 
