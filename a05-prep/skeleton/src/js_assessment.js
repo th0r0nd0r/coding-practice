@@ -73,6 +73,12 @@ const sumNPrimes = (n) => {
       primes.push(n);
     }
   }
+
+  const spy = {
+    sum: (accum, el) => accum + el
+  };
+
+  return primes.myReduce(spy.sum);
 };
 
 // write Function.prototype.myBind.
