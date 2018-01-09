@@ -55,8 +55,12 @@ const myFind = function (array, callback) {
 
 // write sumNPrimes(n)
 const isPrime = (n) => {
+  if (n === 2) {
+    return true;
+  }
+
   for (let i = 2; i <= (n / 2); i++) {
-    if ((n / i) === 0) {
+    if ((n / i) % 1 === 0) {
       return false;
     }
   }
@@ -71,14 +75,14 @@ const sumNPrimes = (n) => {
     return 2;
   }
 
-  let i = 0;
+  let i = 2;
   const primes = [];
 
   while (primes.length < n) {
     if (isPrime(i)) {
       primes.push(i);
     }
-
+    console.log("primes: ", primes);
     i++;
   }
 
