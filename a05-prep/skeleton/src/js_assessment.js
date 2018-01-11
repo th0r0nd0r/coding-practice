@@ -46,6 +46,10 @@ const comp = (x, y) => {
 };
 
 Array.prototype.quickSort = function(comparator = comp) {
+  if (this.length < 2) {
+    return this;
+  }
+
   const pivot = this[0];
   const lessThan = [];
   const greaterThan = [];
@@ -58,6 +62,8 @@ Array.prototype.quickSort = function(comparator = comp) {
       greaterThan.push(el);
     }
   }
+
+  const sorted = lessThan.quickSort() + pivot + greaterThan.quickSort();
 };
 
 // write myFind(array, callback). It should return the first element for which
