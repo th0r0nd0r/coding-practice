@@ -51,8 +51,11 @@ Array.prototype.quickSort = function(comparator = comp) {
   const greaterThan = [];
 
   for (let i = 1; i < this.length; i++) {
-    if (this[i] <= pivot) {
-
+    let el = this[i];
+    if (comparator(el, pivot) < 1) {
+      lessThan.push(el);
+    } else {
+      greaterThan.push(el);
     }
   }
 };
