@@ -45,8 +45,12 @@ const comp = (x, y) => {
   }
 };
 
-Array.prototype.quickSort = (comparator = comp) => {
+Array.prototype.quickSort = function(comparator = comp) {
   let pivot = this[0];
+
+  for (let i = 1; i < this.length; i++) {
+    
+  }
 };
 
 // write myFind(array, callback). It should return the first element for which
