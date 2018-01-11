@@ -35,6 +35,10 @@ Array.prototype.myReduce = function(op) {
 //   - recursively call quickSort on the left and right halves, and return the
 //   full sorted array.
 
+Array.prototype.quickSort = (comparator) => {
+
+};
+
 // write myFind(array, callback). It should return the first element for which
 // callback returns true, or undefined if none is found.
 
