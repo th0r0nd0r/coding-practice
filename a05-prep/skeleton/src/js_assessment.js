@@ -36,7 +36,13 @@ Array.prototype.myReduce = function(op) {
 //   full sorted array.
 
 const comp = (x, y) => {
-  
+  if (x === y) {
+    return 0;
+  } else if (x > y) {
+    return 1;
+  } else {
+    return -1
+  }
 };
 
 Array.prototype.quickSort = (comparator = ) => {
