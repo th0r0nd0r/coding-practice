@@ -46,10 +46,14 @@ const comp = (x, y) => {
 };
 
 Array.prototype.quickSort = function(comparator = comp) {
-  let pivot = this[0];
+  const pivot = this[0];
+  const lessThan = [];
+  const greaterThan = [];
 
   for (let i = 1; i < this.length; i++) {
-    
+    if (this[i] <= pivot) {
+
+    }
   }
 };
 
