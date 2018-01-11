@@ -35,7 +35,11 @@ Array.prototype.myReduce = function(op) {
 //   - recursively call quickSort on the left and right halves, and return the
 //   full sorted array.
 
-Array.prototype.quickSort = (comparator) => {
+const comp = (x, y) => {
+  
+};
+
+Array.prototype.quickSort = (comparator = ) => {
 
 };
 
