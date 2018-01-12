@@ -1,3 +1,6 @@
+// if you can only blow out the tallest candles, 
+// given an array of candle heights, how many candles can you blow out?
+
 function birthdayCakeCandles(n, ar) {
   let height = 1;
   let count = 0;
