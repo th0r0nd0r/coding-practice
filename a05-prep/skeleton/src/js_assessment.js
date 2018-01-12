@@ -63,7 +63,7 @@ Array.prototype.quickSort = function(comparator = comp) {
     }
   }
 
-  const sorted = lessThan.quickSort() + pivot + greaterThan.quickSort();
+  const sorted = lessThan.quickSort(comparator).concat([pivot]).concat(greaterThan.quickSort(comparator));
 
   return sorted;
 };
@@ -115,7 +115,6 @@ const sumNPrimes = (n) => {
     if (isPrime(i)) {
       primes.push(i);
     }
-    console.log("primes: ", primes);
     i++;
   }
 
