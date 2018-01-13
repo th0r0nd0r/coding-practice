@@ -88,9 +88,9 @@ function hasFactors(num, arr) {
 function getTotalX(a, b) {
   let count = 0;
   
-  const max = Math.min(...b) / 2;
+  const max = Math.min(...b);
 
-  for (let i = 0; i < max; i++) {
+  for (let i = 0; i <= max; i++) {
     if (isFactor(i, b) && hasFactors(i, a)) {
       count++;
     }
