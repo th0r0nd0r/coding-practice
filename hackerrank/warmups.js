@@ -65,13 +65,19 @@ function isFactor(big, small) {
 function getTotalX(a, b) {
   let count = 0;
   
-  for (let i = 0; i < a.length; i++) {
-      for (let j = 0; j < (a[i] / 2); j++) {
-          if (isFactor(a[i], j)) {
-              for (let k = 0; k < b.length; k++) {
-                  if (isFactor(j, b[k])) {
+  for (let i = 0; i < b.length; i++) {
+      console.log("b[i]: ", b[i]);
+      for (let j = 0; j <= (b[i] / 2); j++) {
+          console.log("j: ", j);
+          console.log("j is factor of b[i]: ", isFactor(b[i], j));
+          if (isFactor(b[i], j)) {
+              for (let k = 0; k < a.length; k++) {
+                  console.log("a[k]: ", a[k]);
+                  console.log("a[k] is factor of j: ", isFactor(j, a[k]));
+                  if (isFactor(j, a[k])) {
                       count++;
                   }
+                  console.log("count: ", count);
               }
           }
       }
