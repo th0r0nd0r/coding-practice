@@ -33,4 +33,6 @@ function timeConversion(s) {
 }
 
 console.log(timeConversion("12:00:00PM"));
-console.log(timeConversion("12:00:00PM"));
+console.log(timeConversion("11:59:00PM"));
+console.log(timeConversion("03:30:00PM"));
+console.log(timeConversion("03:30:00AM"));
