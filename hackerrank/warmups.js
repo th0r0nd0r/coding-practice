@@ -78,8 +78,6 @@ function hasFactors(num, arr) {
   return true;
 }
 
-
-// need to restructure function:
 // - divide the min of b by two, iterate up to that
 // - change helper function to take an array, and check for remainder with every element
 // - make another helper function to check for a
@@ -95,8 +93,6 @@ function getTotalX(a, b) {
       count++;
     }
   }
-      
-  
-  
+    
   return count;
 }
