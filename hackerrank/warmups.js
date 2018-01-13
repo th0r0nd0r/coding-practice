@@ -55,7 +55,8 @@ function kangaroo(x1, v1, x2, v2) {
 }
 
 
-// 
+// find the # of numbers that are between sets a and b 
+// (is a factor of a, and b is a factor of it)
 
 function getTotalX(a, b) {
   let count = 0;
