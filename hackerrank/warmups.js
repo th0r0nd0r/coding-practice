@@ -68,6 +68,16 @@ function isFactor(num, arr) {
   return true;
 }
 
+function hasFactors(num, arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (num % arr[i] !== 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 
 // need to restructure function:
 // - divide the min of b by two, iterate up to that
