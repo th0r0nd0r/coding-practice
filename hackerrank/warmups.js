@@ -36,8 +36,9 @@ function timeConversion(s) {
   return converted.slice(0,-2);
 }
 
-console.log(timeConversion("12:00:00AM"));
-console.log(timeConversion("12:00:00PM"));
-console.log(timeConversion("11:59:00PM"));
-console.log(timeConversion("03:30:00PM"));
-console.log(timeConversion("03:30:00AM"));
+
+function kangaroo(x1, v1, x2, v2) {
+  if (x2 > x1 && v2 > v1) {
+      return "NO";
+  }
+}
