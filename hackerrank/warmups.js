@@ -22,7 +22,7 @@ function timeConversion(s) {
   const suffix = s.slice(-2);
   let converted = s;
   
-  if (suffix === "PM") {
+  if (suffix === "PM" && s.slice(0,2) !== "12") {
       let hours = parseInt(s.slice(0,2));
       hours += 12;
       
@@ -31,3 +31,6 @@ function timeConversion(s) {
   
   return converted.slice(0,-2);
 }
+
+console.log(timeConversion("12:00:00PM"));
+console.log(timeConversion("12:00:00PM"));
