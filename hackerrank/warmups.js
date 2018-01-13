@@ -16,3 +16,18 @@ function birthdayCakeCandles(n, ar) {
   
   return count;
 }
+
+
+function timeConversion(s) {
+  const suffix = s.slice(-2);
+  let converted = s;
+  
+  if (suffix === "PM") {
+      let hours = parseInt(s.slice(0,2));
+      hours += 12;
+      
+      converted = hours.toString() + s.slice(2);
+  } 
+  
+  return converted.slice(0,-2);
+}
