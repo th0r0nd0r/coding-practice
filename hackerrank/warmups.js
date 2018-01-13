@@ -21,18 +21,21 @@ function birthdayCakeCandles(n, ar) {
 function timeConversion(s) {
   const suffix = s.slice(-2);
   let converted = s;
+  let hours = parseInt(s.slice(0,2));
   
-  if (suffix === "PM" && s.slice(0,2) !== "12") {
-      let hours = parseInt(s.slice(0,2));
+  if (suffix === "PM" && hours !== 12) {
       hours += 12;
       
-      converted = hours.toString() + s.slice(2);
-  } 
+  } else if (suffix === "AM" && hours === 12) {
+      hours -= 12;
+  }
+  
+  converted = hours.toString() + s.slice(2);
   
   return converted.slice(0,-2);
 }
 
-console.log(timeConversion("12:00:00PM"));
+console.log(timeConversion("12:00:00AM"));
 console.log(timeConversion("11:59:00PM"));
 console.log(timeConversion("03:30:00PM"));
 console.log(timeConversion("03:30:00AM"));
