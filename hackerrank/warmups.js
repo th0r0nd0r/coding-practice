@@ -37,6 +37,9 @@ function timeConversion(s) {
 }
 
 
+// two kangaroos jump from positions x1, x2 with speed v1, v2 per jump, respectively.
+// will they ever land on the same spot at the same time?
+
 function kangaroo(x1, v1, x2, v2) {
   if (x2 > x1 && v2 > v1) {
       return "NO";
