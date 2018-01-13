@@ -60,8 +60,12 @@ function kangaroo(x1, v1, x2, v2) {
 
 function isFactor(num, arr) {
   for (let i = 0; i < arr.length; i++) {
-    
+    if (arr[i] % num !== 0) {
+      return false;
+    }
   }
+
+  return true;
 }
 
 
