@@ -41,4 +41,12 @@ function kangaroo(x1, v1, x2, v2) {
   if (x2 > x1 && v2 > v1) {
       return "NO";
   }
+  
+  const remainder = (x1 - x2) % (v2 - v1);
+  
+  if (remainder === 0) {
+      return "YES";
+  } else {
+      return "NO";
+  }
 }
