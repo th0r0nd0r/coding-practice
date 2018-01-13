@@ -58,9 +58,18 @@ function kangaroo(x1, v1, x2, v2) {
 // find the # of numbers that are between sets a and b 
 // (is a factor of a, and b is a factor of it)
 
-function isFactor(big, small) {
-  return (big % small === 0);
+function isFactor(num, arr) {
+  for (let i = 0; i < arr.length; i++) {
+    
+  }
 }
+
+
+// need to restructure function:
+// - divide the min of b by two, iterate up to that
+// - change helper function to take an array, and check for remainder with every element
+// - make another helper function to check for a
+// - if both helpers return true, increment count
 
 function getTotalX(a, b) {
   let count = 0;
