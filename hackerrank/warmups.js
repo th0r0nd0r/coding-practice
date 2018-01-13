@@ -53,3 +53,14 @@ function kangaroo(x1, v1, x2, v2) {
       return "NO";
   }
 }
+
+
+// 
+
+function getTotalX(a, b) {
+  let count = 0;
+  
+  for (let i = 0; i < a.length; i++) {
+      
+  }
+}
