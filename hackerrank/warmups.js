@@ -18,6 +18,8 @@ function birthdayCakeCandles(n, ar) {
 }
 
 
+// convert from standard to military time
+
 function timeConversion(s) {
   const suffix = s.slice(-2);
   let converted = s;
@@ -26,16 +28,16 @@ function timeConversion(s) {
   if (suffix === "PM" && hours !== 12) {
       hours += 12;
       
+      converted = hours.toString() + s.slice(2);
   } else if (suffix === "AM" && hours === 12) {
-      hours -= 12;
+      converted = "00" + s.slice(2);  
   }
-  
-  converted = hours.toString() + s.slice(2);
   
   return converted.slice(0,-2);
 }
 
 console.log(timeConversion("12:00:00AM"));
+console.log(timeConversion("12:00:00PM"));
 console.log(timeConversion("11:59:00PM"));
 console.log(timeConversion("03:30:00PM"));
 console.log(timeConversion("03:30:00AM"));
