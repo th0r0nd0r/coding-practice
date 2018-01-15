@@ -23,7 +23,8 @@ function migratoryBirds(n, ar) {
 }
 
 
-// 
+// given a string of lowercase letters, return the length of the longest string of
+// two alternating letters that can be made by removing all other letters.
 
 function makeUnique(str) {
   return String.prototype.concat(...new Set(str))
