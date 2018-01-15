@@ -51,25 +51,34 @@ function twoCharacters(s) {
   let longestT = 0;
   
   const chars = makeUnique(s);
+  console.log("unique chars: ", chars);
   
   for (let i = 0; i < chars.length; i++) {
       let regexp = new RegExp(chars[i], "g");
       let testT = s.replace(regexp, '');
+      console.log("test t: ", testT);
       let remainingChars = makeUnique(testT);
       
+      
       if (validT(testT) && testT.length > longestT) {
+          console.log("new longest t: ", testT);
           longestT = testT.length;
       }
       
       for (let j = i + 1; j < (chars.length - (i + 1)); i++) {
           regexp = new RegExp(chars[j], "g");
           let nextTest = testT.replace(regexp, '');
-          let length = nextTest.length
+          console.log();
+          
+          let length = nextTest.length;
           
           if (validT(nextTest) && length > longestT) {
-              longestT = testT.length;
+        
+              longestT = nextTest.length;
           }
           
       }
   }
+  
+  return longestT;
 }
