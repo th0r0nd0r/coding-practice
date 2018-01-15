@@ -1,0 +1,3 @@
+function migratoryBirds(n, ar) {
+    
+}
