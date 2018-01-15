@@ -51,15 +51,19 @@ function twoCharacters(s) {
   let longestT = 0;
   
   const chars = makeUnique(s);
-  console.log("unique chars: ", chars);
+  
   
   for (let i = 0; i < chars.length; i++) {
       
-      for (let j = i + 1; j < (chars.length - (i + 1)); i++) {
+      for (let j = (i + 1); j < chars.length; j++) {
+          
+          
           let testChars = `[^${chars[i]}${chars[j]}]`;
           let regexp = new RegExp(testChars, "g");
+       
           
           let testT = s.replace(regexp, '');
+          
           
           if (validT(testT) && testT.length > longestT) {
    
