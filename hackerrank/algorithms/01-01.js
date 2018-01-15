@@ -13,3 +13,8 @@ function isPalindrome(str) {
 
   return true;
 }
+
+console.log(isPalindrome("abba")); 
+console.log(isPalindrome("radar"));
+console.log(isPalindrome("abcdba"));
+console.log(isPalindrome("abdca"));
