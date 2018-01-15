@@ -47,16 +47,29 @@ function validT(str) {
     }
 }
 
-function twoCharaters(s) {
-    let longestT;
-    
-    const chars = makeUnique(s);
-    
-    for (let i = 0; i < chars.length; i++) {
-        let regexp = new RegExp(chars[i], "g");
-        let testT = s.replace(regexp, '');
-        let remainingChars = makeUnique(testT);
-        
-        
-    }
+function twoCharacters(s) {
+  let longestT = 0;
+  
+  const chars = makeUnique(s);
+  
+  for (let i = 0; i < chars.length; i++) {
+      let regexp = new RegExp(chars[i], "g");
+      let testT = s.replace(regexp, '');
+      let remainingChars = makeUnique(testT);
+      
+      if (validT(testT) && testT.length > longestT) {
+          longestT = testT.length;
+      }
+      
+      for (let j = i + 1; j < (chars.length - (i + 1)); i++) {
+          regexp = new RegExp(chars[j], "g");
+          let nextTest = testT.replace(regexp, '');
+          let length = nextTest.length
+          
+          if (validT(nextTest) && length > longestT) {
+              longestT = testT.length;
+          }
+          
+      }
+  }
 }
