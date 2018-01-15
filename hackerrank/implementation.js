@@ -32,7 +32,7 @@ function makeUnique(str) {
 function alternating(str) {
     for (let i = 1; i < str.length; i++) {
         if (str[i - 1] === str[i]) {
-            return false
+            return false;
         }
     }
     
@@ -40,16 +40,23 @@ function alternating(str) {
 }
 
 function validT(str) {
-    if (makeUnique(str).length === 2 && )
+    if (makeUnique(str).length === 2 && alternating(str)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function twoCharaters(s) {
+    let longestT;
+    
     const chars = makeUnique(s);
     
     for (let i = 0; i < chars.length; i++) {
         let regexp = new RegExp(chars[i], "g");
         let testT = s.replace(regexp, '');
         let remainingChars = makeUnique(testT);
-        while 
+        
+        
     }
 }
