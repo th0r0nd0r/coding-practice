@@ -63,7 +63,11 @@ function years(year) {
     if (isWeird(newYear)) {
       yrs.push(newYear);
     }
+
+    newYear++;
   }
 
   return yrs;
 }
+
+console.log(years(1));
