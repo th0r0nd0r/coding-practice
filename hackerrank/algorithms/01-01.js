@@ -42,14 +42,28 @@ function shuffle(arr) {
 // console.log(shuffle([1,2,3,4,5]));
 // console.log(shuffle([1,2,3,4,5]));
 
-function years(year) {
-  const yrs = [];
-
+function isWeird(year) {
   const yr = year.toString();
   const firstTwo = parseInt(yr.slice(0,2));
   const lastTwo = parseInt(yr.slice(2));
+  const middleTwo = parseInt(yr.slice(1,3));
+
+  if (firstTwo + lastTwo === middleTwo) {
+    return true;
+  }
+
+  return false;
+}
+
+function years(year) {
+  const yrs = [];
+  let newYear = year + 1;
 
   while (yrs.length < 10) {
-    
+    if (isWeird(newYear)) {
+      yrs.push(newYear);
+    }
   }
+
+  return yrs;
 }
