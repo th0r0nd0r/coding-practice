@@ -108,5 +108,5 @@ function miniMaxSum(arr) {
   const min = sorted.slice(0,4).reduce(add);
   const max = sorted.slice(1).reduce(add);
   
-  return `${min} ${max}`;
+  console.log(`${min} ${max}`);
 }
