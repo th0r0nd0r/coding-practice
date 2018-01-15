@@ -33,8 +33,8 @@ function twoCharaters(s) {
     const chars = makeUnique(s);
     
     for (let i = 0; i < chars.length; i++) {
-        let regex = new RegExp(chars[i], "g");
-        let testT = s.replace(/)
+        let regexp = new RegExp(chars[i], "g");
+        let testT = s.replace(regexp, '');
         let remainingChars = makeUnique()
         while 
     }
