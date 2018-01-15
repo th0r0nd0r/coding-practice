@@ -98,7 +98,15 @@ function getTotalX(a, b) {
 }
 
 
+// given 5 integers, print the minimum and maximum sums of 4/5 integers
 
 function miniMaxSum(arr) {
-    
+  const sorted = arr.sort();
+  
+  const add = (accum, val) => accum + val;
+  
+  const min = sorted.slice(0,4).reduce(add);
+  const max = sorted.slice(1).reduce(add);
+  
+  return `${min} ${max}`;
 }
