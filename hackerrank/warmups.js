@@ -96,3 +96,9 @@ function getTotalX(a, b) {
     
   return count;
 }
+
+
+
+function miniMaxSum(arr) {
+    
+}
