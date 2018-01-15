@@ -29,13 +29,27 @@ function makeUnique(str) {
   return String.prototype.concat(...new Set(str))
 }
 
+function alternating(str) {
+    for (let i = 1; i < str.length; i++) {
+        if (str[i - 1] === str[i]) {
+            return false
+        }
+    }
+    
+    return true;
+}
+
+function validT(str) {
+    if (makeUnique(str).length === 2 && )
+}
+
 function twoCharaters(s) {
     const chars = makeUnique(s);
     
     for (let i = 0; i < chars.length; i++) {
         let regexp = new RegExp(chars[i], "g");
         let testT = s.replace(regexp, '');
-        let remainingChars = makeUnique()
+        let remainingChars = makeUnique(testT);
         while 
     }
 }
