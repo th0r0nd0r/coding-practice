@@ -18,3 +18,20 @@ console.log(isPalindrome("abba"));
 console.log(isPalindrome("radar"));
 console.log(isPalindrome("abcdba"));
 console.log(isPalindrome("abdca"));
+
+
+function shuffle(arr) {
+  const len = arr.length;
+  const shuffled = [];
+  const picked = [];
+
+  while (shuffled.length < arr.length) {
+    let idx = Math.floor(Math.random() * len);
+    if (!picked.includes(idx)) {
+      shuffled.push(arr[idx]);
+      picked.push(idx);
+    }
+  }
+
+  return shuffled;
+}
