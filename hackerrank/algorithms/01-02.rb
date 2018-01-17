@@ -11,10 +11,9 @@ def digital_root(n)
     n /= 10
   end
 
-  root += n
-
   return digital_root(root)
 end
 
 p digital_root(103)
 p digital_root(999)
+p digital_root(1234)
