@@ -11,6 +11,8 @@ def digital_root(n)
     n /= 10
   end
 
+  digits << n
+
   new_n = digits.inject(:+)
 
   return digital_root(new_n)
