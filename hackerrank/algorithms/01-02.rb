@@ -5,7 +5,7 @@ def digital_root(n)
     return n
   end
 
-  while n >= 10
+  while n > 0
     root += n % 10
     root += n / 10
     n /= 10
