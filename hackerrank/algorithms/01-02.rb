@@ -1,19 +1,20 @@
 def digital_root(n)
-  digits = []
+  root = 0
 
   if n < 10
     return n
   end
 
   while n >= 10
-    digits << n % 10
-    digits << n / 10
+    root += n % 10
+    root += n / 10
     n /= 10
   end
 
-  digits << n
+  root += n
 
-  new_n = digits.inject(:+)
-
-  return digital_root(new_n)
+  return digital_root(root)
 end
+
+p digital_root(103)
+p digital_root(999)
