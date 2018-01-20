@@ -14,8 +14,7 @@ def digital_root(n)
   return digital_root(root)
 end
 
-p digital_root(103)
-p digital_root(999)
-p digital_root(1234)
+# p digital_root(103)
+# p digital_root(999)
+# p digital_root(1234)
 
-3
