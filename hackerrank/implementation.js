@@ -76,3 +76,27 @@ function twoCharacters(s) {
   
   return longestT;
 }
+
+
+// return the area of a highlighted word
+function designerPdfViewer(h, word) {
+    const alph = 'abcdefghijklmnopqrstuvwxyz';
+    let width = 0;
+    let height = 0;
+    
+    for (let i = 0; i < word.length; i++) {
+        width++;
+        
+        let letter = word[i];
+        let ltrIdx = alph.indexOf(letter);
+        let letterHeight = h[ltrIdx];
+        
+        if (letterHeight > height) {
+            height = letterHeight;
+        }
+    }
+
+    const area = width * height;
+    
+    return area;
+}
