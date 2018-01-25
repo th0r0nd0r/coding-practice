@@ -1,3 +1,5 @@
+
+// twoSum O(n^2)
 var twoSum = function(nums, target) {
   for (let i = 0; i < nums.length; i++) {
       let first = nums[i];
@@ -9,6 +11,22 @@ var twoSum = function(nums, target) {
       }
   }
 };
+
+// O(n)
+var twoSum = function(nums, target) {
+  const hash = {};
+  
+  for (let i = 0; i < nums.length; i++) {
+      let num = nums[i];
+      let ans = target - num;
+      if (hash.hasOwnProperty(ans)) {
+          return [hash[ans], i];
+      }
+                  
+      hash[num] = i;
+  }
+};
+
 
 var isPalindrome = function(x) {
   const digits = x.toString();
