@@ -46,3 +46,32 @@ var isPalindrome = function(x) {
   
   return true;
 };
+
+
+
+var mergeTwoLists = function(l1, l2) {
+  let preHead = new ListNode;
+  let prev = preHead;
+  let nextNode;
+  
+  while (l1 !== null || l2 !== null) {
+      if (l1 === null) {
+          nextNode = l2;
+          l2 = l2.next;
+      } else if (l2 === null) {
+          nextNode = l1;
+          l1 = l1.next;
+      } else if (l1.val < l2.val) {
+          nextNode = l1;
+          l1 = l1.next;
+      } else {
+          nextNode = l2;
+          l2 = l2.next;
+      }
+
+      prev.next = nextNode;
+      prev = nextNode;
+  }
+  
+  return preHead.next;
+};
