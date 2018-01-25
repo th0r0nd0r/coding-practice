@@ -32,16 +32,10 @@ var isPalindrome = function(x) {
   const a = x;
   const digits = a.toString().split("");
 
-  console.log(digits);
-  console.log(digits[0]);
   let i = 0;
   let j = digits.length - 1;
-  console.log(i);
-  console.log(j);
   
   while (i < j) {
-      console.log(digits[i]);
-      console.log(digits[j]);
       if (digits[i] !== digits[j]) {
           return false;
       }
