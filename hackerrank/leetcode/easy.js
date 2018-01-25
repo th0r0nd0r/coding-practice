@@ -9,3 +9,18 @@ var twoSum = function(nums, target) {
       }
   }
 };
+
+var isPalindrome = function(x) {
+  const digits = x.toString();
+  
+  let i = 0;
+  let j = digits.lengnth - 1;
+  
+  while (i < j) {
+      if (digits[i] !== digits[j]) {
+          return false;
+      }
+  }
+  
+  return true;
+};
