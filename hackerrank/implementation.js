@@ -101,6 +101,9 @@ function designerPdfViewer(h, word) {
     return area;
 }
 
+
+
+// find how many of n's digits divide evenly into n
 function findDigits(n) {
     let num = n;
     let count = 0;
