@@ -100,3 +100,19 @@ function designerPdfViewer(h, word) {
     
     return area;
 }
+
+function findDigits(n) {
+    let num = n;
+    let count = 0;
+    
+    while (num > 0) {
+        let digit = num % 0;
+        if (n % digit === 0) {
+            count++;
+        }
+        
+        num = Math.floor(num / 10);
+    }
+    
+    return count;
+}
