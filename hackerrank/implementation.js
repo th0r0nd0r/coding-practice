@@ -109,7 +109,8 @@ function findDigits(n) {
     let count = 0;
     
     while (num > 0) {
-        let digit = num % 0;
+        let digit = num % 10;
+
         if (n % digit === 0) {
             count++;
         }
