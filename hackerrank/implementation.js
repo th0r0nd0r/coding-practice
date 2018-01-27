@@ -123,6 +123,11 @@ function findDigits(n) {
 
 
 
+
+function allZeros(arr) {
+    return arr.every( v => v <= 0);
+}
+
 function cutTheSticks(arr) {
     const nonZeros = (el) => {
         return el > 0;
