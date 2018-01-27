@@ -124,19 +124,19 @@ function findDigits(n) {
 
 
 function cutTheSticks(arr) {
-    const cutSize = Math.min(...arr);
-    
-    arr.forEach(function(el) {
-        el -= cutSize;
-    });
-    
     const nonZeros = (el) => {
         return el > 0;
     };
     
-    while (arr.length > 0) {
+    while (!allZeros(arr)) {
+        arr = arr.filter(nonZeros);
+        
         console.log(arr.length);
         
-        arr = arr.filter(nonZeros);
+        let cutSize = Math.min(...arr);
+        
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] -= cutSize;
+        }
     }
 }
