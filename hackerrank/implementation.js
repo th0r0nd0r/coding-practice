@@ -120,3 +120,23 @@ function findDigits(n) {
     
     return count;
 }
+
+
+
+function cutTheSticks(arr) {
+    const cutSize = Math.min(...arr);
+    
+    arr.forEach(function(el) {
+        el -= cutSize;
+    });
+    
+    const nonZeros = (el) => {
+        return el > 0;
+    });
+    
+    while (arr.length > 0) {
+        console.log(arr.length);
+        
+        arr = arr.filter(nonZeros);
+    }
+}
