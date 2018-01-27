@@ -132,7 +132,7 @@ function cutTheSticks(arr) {
     
     const nonZeros = (el) => {
         return el > 0;
-    });
+    };
     
     while (arr.length > 0) {
         console.log(arr.length);
