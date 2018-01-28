@@ -161,3 +161,17 @@ function utopianTree(n) {
     return h;
 }
 
+function chocolateFeast(n, c, m) {
+    let chocs = Math.floor(n / c);
+    let wraps = Math.floor(n / c);
+    
+    while (wraps >= m) {
+        wraps -= m;
+        chocs++;
+        wraps++;
+
+        
+    }
+    
+    return chocs;
+}
