@@ -176,6 +176,8 @@ function chocolateFeast(n, c, m) {
     return chocs;
 }
 
+
+
 // weird chocolate bar birthday problem
 function solve(barLength, barPieces, d, m){
     let waysCount = 0;
@@ -192,4 +194,26 @@ function solve(barLength, barPieces, d, m){
     }
     
     return waysCount;
+}
+
+
+
+function breakingRecords(score) {
+    let min = score[0];
+    let max = score[0];
+    let maxRecords = 0;
+    let minRecords = 0;
+    
+    for (let i = 1; i < score.length; i++) {
+        let newScore = score[i];
+        if (newScore > max) {
+            max = newScore;
+            maxRecords++;
+        } else if (newScore < min) {
+            min = newScore;
+            minRecords++;
+        }
+    }
+    
+    return [maxRecords,minRecords];
 }
