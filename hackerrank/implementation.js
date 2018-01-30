@@ -175,3 +175,21 @@ function chocolateFeast(n, c, m) {
     
     return chocs;
 }
+
+// weird chocolate bar birthday problem
+function solve(barLength, barPieces, d, m){
+    let waysCount = 0;
+    
+    for (let i = 0; i < barLength; i++) {
+        let sum = barPieces[i];
+        for (let j = i + 1; j < i + m; j++) {
+            sum += barPieces[j];
+        }
+        
+        if (sum === d) {
+            waysCount++;
+        }
+    }
+    
+    return waysCount;
+}
