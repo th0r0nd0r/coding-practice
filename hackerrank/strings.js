@@ -19,7 +19,7 @@ function isPangram(input) {
   }
 }
 
-// determine how scrambled an sos message is
+// Given an SOS message "SOSSOSSOS", return the number of letters that are out of place (e.g "SQSTOS" ==> 2)
 function marsExploration(s) {
     let scrambled = 0;
     
