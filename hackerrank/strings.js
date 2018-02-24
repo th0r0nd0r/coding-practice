@@ -41,3 +41,22 @@ function marsExploration(s) {
     
     return scrambled;
 }
+
+// how many letters do you have to delete from s1 and s2 to make them anagrams
+// of each other?
+function makingAnagrams(s1, s2){
+    const str1 = s1.split('');
+    const str2 = s2.split('');
+    let str1Only = 0;
+    
+    str1.forEach((el, i) => {
+        let j = str2.findIndex((el2) => el2 === el);
+        if (j >= 0) {
+            str2.splice(j,1);
+        } else {
+            str1Only++;
+        }
+    });
+    
+    return str1Only + str2.length;
+}
