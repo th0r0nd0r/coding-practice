@@ -60,3 +60,12 @@ function makingAnagrams(s1, s2){
     
     return str1Only + str2.length;
 }
+
+
+// funny string
+function funnyString(s){
+    const reverse = s.split('').reverse().join();
+    for (let i = 0; i < s.length; i++) {
+        
+    }
+}
