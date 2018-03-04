@@ -65,7 +65,14 @@ function makingAnagrams(s1, s2){
 // funny string
 function funnyString(s){
     const reverse = s.split('').reverse().join();
-    for (let i = 0; i < s.length; i++) {
+    for (let i = 0; i < s.length - 1; i++) {
+        let sDiff = Math.abs((s[i].charCodeAt() - s[i + 1].charCodeAt()));
+        let reverseDiff = Math.abs((reverse[i].charCodeAt() - reverse[i + 1].charCodeAt()));
         
+        if (sDiff !== reverseDiff) {
+            return "Not Funny";
+        }
     }
+    
+    return "Funny";
 }
