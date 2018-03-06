@@ -75,3 +75,12 @@ function funnyString(s){
     
     return "Funny";
 }
+
+
+function super_reduced_string(s){
+    let repeating = false;
+   const ar = s.split('');
+    ar.forEach((el, i) => {
+        
+    });
+}
