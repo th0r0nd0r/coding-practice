@@ -81,6 +81,6 @@ function super_reduced_string(s){
     let repeating = false;
    const ar = s.split('');
     ar.forEach((el, i) => {
-        
+        // reduce the string
     });
 }
