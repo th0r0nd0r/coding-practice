@@ -13,3 +13,5 @@ function FirstReverse(str) {
   }
   return reversed.join('');
 }
+
+// what was their gimmick?
