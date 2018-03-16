@@ -18,3 +18,7 @@
 - first node is at level 0
 - height of tree = # of edges
 - max # of nodes at level i = 2^i
+
+#### Balanced Binary Tree
+- difference between height of left and right subtrees for each node is no more than k (k is usually 1)
+- helps keep time complexity down
