@@ -11,3 +11,4 @@ When picking a data structure to use, you must consider:
 - store hierarchical data
 - organize data for quick search, insertion, deletion (binary search trees)
 - Tries
+- network routing algorithms
