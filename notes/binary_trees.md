@@ -22,3 +22,9 @@
 #### Balanced Binary Tree
 - difference between height of left and right subtrees for each node is no more than k (k is usually 1)
 - helps keep time complexity down
+
+#### Ways to Represent
+- dynamically created nodes (like a linked list)
+- arrays (usually for complete trees)
+  + right child index = 2i + 1
+  + left child index = 2i + 2
