@@ -11,7 +11,10 @@
 - all levels except (maybe) last are filled
 - unfilled nodes are as far left as possible
 
+#### Perfect Binary Tree
+- every level totally filled
+
 #### Node Levels/Height
 - first node is at level 0
-- height of tree = # of levels
+- height of tree = # of edges
 - max # of nodes at level i = 2^i
