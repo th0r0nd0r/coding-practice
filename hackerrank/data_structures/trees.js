@@ -22,3 +22,9 @@ function preOrder(root) {
 doRecursion(root.left, arr);
 doRecursion(root.right, arr);
 arr.push(root.data);
+
+// inOrder goes like this:
+
+doRecursion(root.left, arr);
+arr.push(root.data);
+doRecursion(root.right, arr);
