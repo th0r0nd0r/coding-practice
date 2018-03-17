@@ -17,3 +17,8 @@ function preOrder(root) {
   console.log(dumbArray.join(' '));
 }
 
+// Postorder traversal just changes the order
+
+doRecursion(root.left, arr);
+doRecursion(root.right, arr);
+arr.push(root.data);
