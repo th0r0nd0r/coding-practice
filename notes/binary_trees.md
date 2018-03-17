@@ -28,3 +28,12 @@
 - arrays (usually for complete trees)
   + right child index = 2i + 1
   + left child index = 2i + 2
+
+## Traversing a Binary Tree
+
+#### Preorder
+<root><left><right>
+#### Inorder
+<left><root><right>
+#### Post
+<left><right><root>

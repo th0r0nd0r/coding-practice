@@ -11,10 +11,10 @@
 - search: O(n)
 - insertion (at end, or beginning with ring buffer): O(1)
 - deletion: O(n)
-
+ 
 #### Linked List
 - search: O(n)
-- insertion: O(1)
+- insertion (at end of list): O(1)
 - deletion: O(n)
 - note: linked lists have O(1) insertion/deletion if you're already at the location you want to add/delete at via a pointer.
 
