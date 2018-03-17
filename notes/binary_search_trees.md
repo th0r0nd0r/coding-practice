@@ -1,7 +1,7 @@
 # Binary Search Trees
 
 ### What are they?
-- a binary tree in which for each node, the values of all nodes in the left subtree are lesser than the values in all nodes of the right subtree
+- a binary tree in which for each node, the values of all nodes in the left subtree are lesser than or equal to the current node's value, and the values in all nodes of the right subtree are greater than the current value.
 
 ### Why use them?
 
