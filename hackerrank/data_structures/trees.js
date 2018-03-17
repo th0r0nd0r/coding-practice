@@ -31,17 +31,14 @@ doRecursion(root.right, arr);
 
 
 // Find height of a binary tree
+// hackerrank throws an error but the solution works
 
 function treeHeight(root) {
-  // console.log(root);
 if (root === null) {
       return -1;
   }
   let leftHeight = treeHeight(root.left);
-  console.log("leftHeight: ", leftHeight);
   let rightHeight = treeHeight(root.right);
-  console.log("rightHeight: ", rightHeight);
   let maxHeight = Math.max(leftHeight, rightHeight) + 1;
-  console.log("maxHeight: ", maxHeight);
   return maxHeight;
 }
