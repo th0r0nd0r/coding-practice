@@ -17,7 +17,7 @@ function preOrder(root) {
   console.log(dumbArray.join(' '));
 }
 
-// Postorder traversal just changes the order
+// postOrder traversal just changes the order
 
 doRecursion(root.left, arr);
 doRecursion(root.right, arr);
@@ -28,3 +28,20 @@ arr.push(root.data);
 doRecursion(root.left, arr);
 arr.push(root.data);
 doRecursion(root.right, arr);
+
+
+// Find height of a binary tree
+
+function treeHeight(root) {
+  // console.log(root);
+if (root === null) {
+      return -1;
+  }
+  let leftHeight = treeHeight(root.left);
+  console.log("leftHeight: ", leftHeight);
+  let rightHeight = treeHeight(root.right);
+  console.log("rightHeight: ", rightHeight);
+  let maxHeight = Math.max(leftHeight, rightHeight) + 1;
+  console.log("maxHeight: ", maxHeight);
+  return maxHeight;
+}
