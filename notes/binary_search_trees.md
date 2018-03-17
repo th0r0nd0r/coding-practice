@@ -13,6 +13,7 @@
 - search: O(n)
 - insertion: O(1)
 - deletion: O(n)
+- note: linked lists have O(1) insertion/deletion if you're already at the location you want to add/delete at via a pointer.
 
 #### Array (sorted)
 - search: O(log(n)) (with binary search)
