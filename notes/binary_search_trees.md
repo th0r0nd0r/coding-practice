@@ -31,7 +31,7 @@
 
 ### Implementation
 
-#### 1 - Dynamically created Nodes
+#### 1 - Dynamically-Created Nodes
 - create node class
 - each node instance has 3 properties:
   - value
