@@ -16,4 +16,5 @@
 - The memory allocated for the above segments is fixed for the entire runtime of an application.
 - ex: if the stack size exceeds the allocated stack memory, you get a StackOverflow error
 
-#### Heap
+#### Heap (Dynamic Memory)
+- dynamically sized store of memory that a programmer can use more freely
