@@ -28,3 +28,12 @@
 - insertion: O(log(n))
 - deletion: O(log(n))
 - note: these are average cases.  Worst case for all ops in O(n) for an unbalanced tree.
+
+### Implementation
+
+#### 1 - Dynamically created Nodes
+- create node class
+- each node instance has 3 properties:
+  - value
+  - pointer to left child
+  - pointer to right child
