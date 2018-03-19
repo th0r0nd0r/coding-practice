@@ -18,3 +18,5 @@
 
 #### Heap (Dynamic Memory)
 - dynamically sized store of memory that a programmer can use more freely
+- not an implementation of the heap data structure
+- "a function can allocate memory to the heap if it wants the data to live longer than itself"
