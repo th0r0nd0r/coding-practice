@@ -10,6 +10,9 @@ def insert(r,val):
         r.right = insert(r.right, val)
     return r
 
+
+
+
 # find the lowest common ancestor of two nodes in a bst
 
 # recursively
@@ -33,3 +36,15 @@ def lca(root , v1 , v2):
             root = root.left
         else:
             return root
+
+
+
+# given the root of a bst, find the height of the tree
+
+def height(root):
+    if root == None:
+        return -1
+    leftHeight = height(root.left)
+    rightHeight = height(root.right)
+    
+    return max(leftHeight, rightHeight) + 1
