@@ -12,6 +12,7 @@ def insert(r,val):
 
 # find the lowest common ancestor of two nodes in a bst
 
+# recursively
 def lca(root , v1 , v2):
     r = root.data
     
@@ -21,3 +22,14 @@ def lca(root , v1 , v2):
         return lca(root.left, v1, v2)
     else:
         return root
+
+# iteratively
+def lca(root , v1 , v2):
+    r = root.data
+    while True:
+        if r < v1 and r < v2:
+            root = root.right
+        elif r > v1 and root > v2:
+            root = root.left
+        else:
+            return root
