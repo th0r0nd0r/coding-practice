@@ -69,3 +69,19 @@ def topView(root):
         
     top_view = left_side + right_side
     print " ".join(map(str, top_view))
+
+# Level order traversal of a binary tree
+
+def levelOrder(root):
+    q = [root]
+    nodes = []
+    
+    while q:
+        curr_node = q.pop(0)
+        nodes.append(curr_node.data)
+        if curr_node.left != None:
+            q.append(curr_node.left)
+        if curr_node.right != None:
+            q.append(curr_node.right)
+    
+    print " ".join(map(str, nodes))
