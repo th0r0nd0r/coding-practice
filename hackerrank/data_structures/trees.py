@@ -1,9 +1,8 @@
 # insert into binary search tree
 
 def insert(r,val):
-    new_node = Node(val)
     if r == None:
-        r = new_node
+        r = Node(val)
     elif val <= r.data:
         r.left = insert(r.left, val)
     else:
@@ -85,3 +84,30 @@ def levelOrder(root):
             q.append(curr_node.right)
     
     print " ".join(map(str, nodes))
+
+
+
+# decode a huffman tree
+
+def decodeHuff(root , s):
+    i = 0
+    curr_node = root
+    message = ""
+    
+    if is_leaf(root):
+        for i in range(s.length):
+            message += root.data
+    else:
+        while i < len(s):
+            if s[i] == "0":
+                curr_node = curr_node.left
+            else:
+                curr_node = curr_node.right   
+                
+            if is_leaf(curr_node):
+                message += curr_node.data
+                curr_node = root 
+
+            i += 1
+        
+    print message
