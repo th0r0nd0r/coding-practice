@@ -48,3 +48,24 @@ def height(root):
     rightHeight = height(root.right)
     
     return max(leftHeight, rightHeight) + 1
+
+
+
+# print the "top view" of a binary tree
+
+def topView(root):
+    left_side = [root.data]
+    right_side = []
+    
+    left_node = root.left
+    right_node = root.right
+    
+    while left_node != None:
+        left_side.insert(0, left_node.data)
+        left_node = left_node.left
+    while right_node != None:
+        right_side.append(right_node.data)
+        right_node = right_node.right
+        
+    top_view = left_side + right_side
+    print " ".join(map(str, top_view))
