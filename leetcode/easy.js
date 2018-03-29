@@ -76,7 +76,7 @@ var mergeTwoLists = function(l1, l2) {
   return preHead.next;
 };
 
-// valid brackets
+// (stacks) valid brackets
 var isValid = function(s) {
     const stack = [];
     const brackets = {

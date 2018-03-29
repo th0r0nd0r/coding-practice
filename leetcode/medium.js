@@ -1,4 +1,4 @@
-// inorder binary tree traversal
+// (stacks) inorder binary tree traversal
 var inorderTraversal = function(root) {
   const returnArr = [];
   console.log(root);

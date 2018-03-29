@@ -1,4 +1,4 @@
-// postorder binary tree traversal
+// (stacks) postorder binary tree traversal
 var postorderTraversal = function(root) {
   const returnArr = [];
   
