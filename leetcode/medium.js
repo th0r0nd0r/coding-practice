@@ -23,3 +23,39 @@ var inorderTraversal = function(root) {
 
   return returnArr;
 };
+
+// (queues) find the smallest interval in which a CPU can complete the given tasks
+var leastInterval = function(tasks, n) {
+  const q = [];
+  let i = 0;
+  let uniqueTasks = [];
+  let counts = {};
+  
+  tasks.forEach(function(task) {
+      if (!counts[task]) {
+          uniqueTasks.push(task);
+          counts[task] = n;
+      }
+  });
+  
+  while (tasks.length > 0) {       
+      let task = tasks[i];
+      if (counts[task] >= n) {
+          q.unshift(task);
+          tasks.splice(i, 1);
+          counts[task] = 0;
+          i = 0;
+          
+      } else if (i === tasks.length - 1) {
+          i = 0;  
+          uniqueTasks.forEach(function(tsk) {
+              counts[tsk]++; 
+          });
+          q.unshift("idle");
+      } else {
+          i++;
+      }
+  }
+  
+  return q.length;
+};
