@@ -75,3 +75,33 @@ var mergeTwoLists = function(l1, l2) {
   
   return preHead.next;
 };
+
+// valid brackets
+var isValid = function(s) {
+    const stack = [];
+    const brackets = {
+        "{":"}",
+        "[":"]",
+        "(":")"
+    };
+    
+    for (let i = 0; i < s.length; i++) {
+        let bracket = s[i];
+        if (brackets[bracket]) {
+            stack.push(bracket);
+        } else if (stack.length === 0) {
+            return false;
+        } else {
+            let openBracket = stack.pop();
+            if (brackets[openBracket] !== bracket) {
+                return false;
+            }
+        }
+    }
+                   
+    if (stack.length === 0) {
+            return true;
+    } else {
+        return false;
+    }
+};
