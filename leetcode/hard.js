@@ -27,6 +27,12 @@ var postorderTraversal = function(root) {
 // n queens
 
 var solveNQueens = function(n) {
+  // const testBoard = [ 
+  //   [ 'Q', '.', '.', '.' ],
+  //   [ '.', '.', '.', 'Q' ],
+  //   [ '.', '.', '.', '.' ],
+  //   [ '.', '.', '.', '.' ] ];
+
   const board = [];
   for (let i = 0; i < n; i++) {
     let emptyRow = [];
@@ -41,8 +47,10 @@ var solveNQueens = function(n) {
   function queenSafe(row, col) {
     for (let i = 0; i < n; i++) {
       let horizontal = board[row][i];
-      let vertical = board[col][i];
+      let vertical = board[i][col];
       if (horizontal === "Q" || vertical === "Q") {
+        // console.log("horizontal: ", [row, i]);
+        // console.o
         return false;
       }
     }
@@ -63,13 +71,17 @@ var solveNQueens = function(n) {
     return true;
   }
 
+  console.log(queenSafe(2,0));
+  console.log(queenSafe(2,1));
+  console.log(queenSafe(2,2));
+  console.log(queenSafe(2,3));
+
   function nQueensBacktrack(row) {
     console.log("row: ", row);
     for (let i = 0; i < n; i++) {
       console.log("col: ", i);
       console.log();
       if (queenSafe(row, i)) {
-        console.log("puttin in this row: ", board[row]);
         board[row][i] = "Q";
         console.log("queen is safe");
         console.log(board);
@@ -81,15 +93,18 @@ var solveNQueens = function(n) {
           console.log();
 
         } else {
-          console.log("backtracking...");
+          console.log("next row");
           nQueensBacktrack(row + 1);
+          board[row][i] = ".";
         }
       }
     }
   }
-  console.log("asdf");
+
+
   nQueensBacktrack(0);
   console.log(board);
 };
 
 solveNQueens(4);
+
