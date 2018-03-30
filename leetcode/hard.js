@@ -27,11 +27,10 @@ var postorderTraversal = function(root) {
 // n queens
 
 var solveNQueens = function(n) {
-  const board = new Array(n);
-  board.forEach(function(arr) {
-    arr = new Array(n);
-  });
-  console.log(board);
+  const board = [];
+  for (let i = 0; i < n; i++) {
+      board.push(new Array(n));
+  }
   
   // create this function inside n queens function so it has access to the 2d chess board
   function queenSafe(row, col) {
