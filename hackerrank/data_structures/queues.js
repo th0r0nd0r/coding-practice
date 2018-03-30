@@ -8,8 +8,7 @@ function processData(input) {
   const inputArr = input.split('\n');
   inputArr.splice(0,1);
   
-  inputArr.forEach(function(cmd, i) {
-      // console.log("command: ", cmd);
+  inputArr.forEach(function(cmd, i) { 
       if (cmd[0] === '1') {
           let num = parseInt(cmd.slice(2));
           s1.push(num);
