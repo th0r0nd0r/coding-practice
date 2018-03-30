@@ -27,13 +27,8 @@ var postorderTraversal = function(root) {
 // n queens
 
 var solveNQueens = function(n) {
-  // const testBoard = [ 
-  //   [ 'Q', '.', '.', '.' ],
-  //   [ '.', '.', '.', 'Q' ],
-  //   [ '.', '.', '.', '.' ],
-  //   [ '.', '.', '.', '.' ] ];
-
   const board = [];
+  const solutions = [];
   for (let i = 0; i < n; i++) {
     let emptyRow = [];
     for (let j = 0; j < n; j ++) {
@@ -41,66 +36,47 @@ var solveNQueens = function(n) {
     }
     board.push(emptyRow);
   }
-  console.log("initialized board: ", board);
-  
-  // create this function inside n queens function so it has access to the 2d chess board
+
   function queenSafe(row, col) {
     for (let i = 0; i < n; i++) {
       let horizontal = board[row][i];
       let vertical = board[i][col];
       if (horizontal === "Q" || vertical === "Q") {
-        // console.log("horizontal: ", [row, i]);
-        // console.o
         return false;
       }
     }
 
-    const reset = Math.min(row,col);
-
-    for (let i = row - reset, j = col - reset; i < n && j < n; i++, j++) {
+    for (let i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
       if (board[i][j] === 'Q') {
         return false;
       }
     }
-    for (let i = row - reset, j = col + reset; i < n && j >= 0; i++, j--) {
-      if (board[i][j] === 'Q') {
-        return false;
-      }
+    for (let i = row - 1, j = col + 1; i >= 0 && j < n; i--, j++) {
+        if (board[i][j] === 'Q') {
+          return false;
+        }
     }
 
     return true;
   }
 
-  console.log(queenSafe(2,0));
-  console.log(queenSafe(2,1));
-  console.log(queenSafe(2,2));
-  console.log(queenSafe(2,3));
-
   function nQueensBacktrack(row) {
-    console.log("row: ", row);
     for (let i = 0; i < n; i++) {
-      console.log("col: ", i);
-      console.log();
       if (queenSafe(row, i)) {
         board[row][i] = "Q";
-        console.log("queen is safe");
-        console.log(board);
-        console.log();
 
         if (row === (n - 1)) { 
-          console.log("final row");
-          console.log(board);
-          console.log();
-          return board;
+          let stringBoard = [];
+          board.forEach(function(rw) {
+            let stringRow = rw.join('');
+            stringBoard.push(stringRow);
+          });
+          solutions.push(stringBoard);
 
         } else {
-          console.log("next row");
-          if (nQueensBacktrack(row + 1)) {
-            return board;
-          } else {
-            board[row][i] = ".";
-          }
+          nQueensBacktrack(row + 1);
         }
+        board[row][i] = ".";
       }
     }
 
@@ -109,9 +85,7 @@ var solveNQueens = function(n) {
 
 
   nQueensBacktrack(0);
-  
-  
-};
+  return solutions;
 
-solveNQueens(4);
+};
 
