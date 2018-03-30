@@ -5,12 +5,21 @@ class MaxIntSet
   end
 
   def insert(num)
+    if num < 0 || num > @max
+      raise "Out of bounds"
+    else
+      @store[num] = true
+    end
   end
 
   def remove(num)
+    if 0 <= num || num < @max
+      @store[num] = false
+    end
   end
 
   def include?(num)
+    @store[num]
   end
 
   private
