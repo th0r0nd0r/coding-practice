@@ -28,16 +28,20 @@ var postorderTraversal = function(root) {
 
 var solveNQueens = function(n) {
   const board = [];
+  const emptyRow = [];
+  for (let i = 0; i < n; i ++) {
+    emptyRow.push('.');
+  }
   for (let i = 0; i < n; i++) {
-      board.push(new Array(n));
+      board.push(emptyRow);
   }
   
   // create this function inside n queens function so it has access to the 2d chess board
   function queenSafe(row, col) {
     for (let i = 0; i < n; i++) {
-      let horizontal = board[row[i]];
-      let vertical = board[col[i]];
-      if (horizontal || vertical) {
+      let horizontal = board[row][i];
+      let vertical = board[col][i];
+      if (horizontal === "Q" || vertical === "Q") {
         return false;
       }
     }
@@ -45,12 +49,12 @@ var solveNQueens = function(n) {
     const reset = Math.min(row,col);
 
     for (let i = row - reset, j = col - reset; i < n && j < n; i++, j++) {
-      if (board[i][j]) {
+      if (board[i][j] === 'Q') {
         return false;
       }
     }
     for (let i = row - reset, j = col + reset; i < n && j >= 0; i++, j--) {
-      if (board[i][j]) {
+      if (board[i][j] === 'Q') {
         return false;
       }
     }
@@ -61,7 +65,7 @@ var solveNQueens = function(n) {
   function nQueensBacktrack(row) {
     for (let i = 0; i < n; i++) {
       if (queenSafe(row, i)) {
-        board[row[i]] = "Q";
+        board[row][i] = "Q";
         if (row === n - 1) {
           console.log(board);
         } else {
@@ -70,6 +74,9 @@ var solveNQueens = function(n) {
       }
     }
   }
-  
-  
+  console.log("asdf");
+  console.log(nQueensBacktrack(0));
+  console.log(board);
 };
+
+solveNQueens(4);
