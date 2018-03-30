@@ -87,23 +87,30 @@ var solveNQueens = function(n) {
         console.log(board);
         console.log();
 
-        if (row === (n - 1)) {
+        if (row === (n - 1)) { 
           console.log("final row");
           console.log(board);
           console.log();
+          return board;
 
         } else {
           console.log("next row");
-          nQueensBacktrack(row + 1);
-          board[row][i] = ".";
+          if (nQueensBacktrack(row + 1)) {
+            return board;
+          } else {
+            board[row][i] = ".";
+          }
         }
       }
     }
+
+    return false;
   }
 
 
   nQueensBacktrack(0);
-  console.log(board);
+  
+  
 };
 
 solveNQueens(4);
