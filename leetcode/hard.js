@@ -29,8 +29,16 @@ let n;
 let board;
 
 // create this function inside n queens function so it has access to the 2d chess board
-function queenSafe(coords) {
-    for (let i = 0, j = 0; i < n && j < n; i++, j++) {
+function queenSafe(row, col) {
+    for (let i = 0; i < n; i++) {
+      let horizontal = board[row[i]];
+      let vertical = board[col[i]];
+      if (horizontal || vertical) {
+        return false;
+      }
+    }
 
+    for (let i = 0, j = 0; i < n && j < n; i++, j++) {
+      // check diagonal
     }
 }
