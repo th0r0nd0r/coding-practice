@@ -23,3 +23,8 @@ var postorderTraversal = function(root) {
 
   return returnArr;
 };
+
+// n queens
+function queenSafe(coords) {
+    
+}
