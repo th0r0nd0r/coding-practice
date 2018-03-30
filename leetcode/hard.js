@@ -28,13 +28,14 @@ var postorderTraversal = function(root) {
 
 var solveNQueens = function(n) {
   const board = [];
-  const emptyRow = [];
-  for (let i = 0; i < n; i ++) {
-    emptyRow.push('.');
-  }
   for (let i = 0; i < n; i++) {
-      board.push(emptyRow);
+    let emptyRow = [];
+    for (let j = 0; j < n; j ++) {
+      emptyRow.push('.');
+    }
+    board.push(emptyRow);
   }
+  console.log("initialized board: ", board);
   
   // create this function inside n queens function so it has access to the 2d chess board
   function queenSafe(row, col) {
@@ -63,19 +64,31 @@ var solveNQueens = function(n) {
   }
 
   function nQueensBacktrack(row) {
+    console.log("row: ", row);
     for (let i = 0; i < n; i++) {
+      console.log("col: ", i);
+      console.log();
       if (queenSafe(row, i)) {
+        console.log("puttin in this row: ", board[row]);
         board[row][i] = "Q";
-        if (row === n - 1) {
+        console.log("queen is safe");
+        console.log(board);
+        console.log();
+
+        if (row === (n - 1)) {
+          console.log("final row");
           console.log(board);
+          console.log();
+
         } else {
+          console.log("backtracking...");
           nQueensBacktrack(row + 1);
         }
       }
     }
   }
   console.log("asdf");
-  console.log(nQueensBacktrack(0));
+  nQueensBacktrack(0);
   console.log(board);
 };
 
