@@ -26,7 +26,7 @@ var inorderTraversal = function(root) {
 
 // (queues) find the smallest interval in which a CPU can complete the given tasks
 var leastInterval = function(tasks, n) {
-  const q = [];
+  let q = 0;
   let i = 0;
   let uniqueTasks = [];
   let counts = {};
@@ -34,28 +34,46 @@ var leastInterval = function(tasks, n) {
   tasks.forEach(function(task) {
       if (!counts[task]) {
           uniqueTasks.push(task);
-          counts[task] = n;
+          counts[task] = n + 1;
       }
   });
   
   while (tasks.length > 0) {       
       let task = tasks[i];
-      if (counts[task] >= n) {
-          q.unshift(task);
+      console.log("tasks: ", tasks);
+      console.log("i: ", i);
+      console.log("current task: ", task);
+      console.log("counts: ", counts);
+      console.log();
+      if (counts[task] > n) {
+          q++;
+          console.log("pushing task...");
+          console.log("queue: ", q);
+          console.log();
           tasks.splice(i, 1);
-          counts[task] = 0;
+          uniqueTasks.forEach(function(tsk) {
+            counts[tsk]++; 
+          });
+          counts[task] = 1;
           i = 0;
+
           
       } else if (i === tasks.length - 1) {
           i = 0;  
           uniqueTasks.forEach(function(tsk) {
               counts[tsk]++; 
           });
-          q.unshift("idle");
+          q++;
+          console.log("pushing task...");
+          console.log("queue: ", q);
+          console.log();
       } else {
           i++;
       }
   }
   
-  return q.length;
+    // console.log(q);
+    return q;
 };
+
+leastInterval(["A","A","A","B","B","B"], 2);
