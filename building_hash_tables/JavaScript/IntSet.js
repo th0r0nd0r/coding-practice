@@ -4,6 +4,8 @@ class MaxIntSet {
     this.store = new Array(max).fill(false);
 
     this.insert = this.insert.bind(this);
+    this.remove = this.remove.bind(this);
+    this.include = this.include.bind(this);
   }
 
   insert(num) {
@@ -12,5 +14,15 @@ class MaxIntSet {
     } 
 
     this.store[num] = true;
+  }
+
+  remove(num) {
+    if (0 <= num || num < this.max) {
+      this.store[num] = false;
+    }
+  }
+
+  include(num) {
+    return this.store[num];
   }
 }
