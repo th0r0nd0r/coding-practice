@@ -93,6 +93,8 @@ class ResizingIntSet {
     if (idx !== -1) {
       bucket.splice(idx, 1);
     }
+
+    this.count--;
   }
 
   include(num) {
@@ -107,8 +109,8 @@ class ResizingIntSet {
   _resize() {
     let newSize = this.numBuckets * 2;
     let newStore = new Array();
-    while (newStore.length < this.numBuckets * 2) {
-      this.store.push([]);
+    while (newStore.length < newSize) {
+      newStore.push([]);
     }
 
     this.store.forEach(function(bucket) {
@@ -118,7 +120,15 @@ class ResizingIntSet {
     });
 
     this.store = newStore;
+    this.numBuckets = this.store.length;
   }
 }
 
+const set = new ResizingIntSet(2);
+
+set.insert(38);
+set.insert(234);
+set.insert(-3);
+set.remove(-3);
+console.log(set);
 
