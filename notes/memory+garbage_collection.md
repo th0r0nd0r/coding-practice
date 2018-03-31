@@ -33,6 +33,85 @@ function someFunc() {
 }
 ```
 
+# Accidental Globals with 'this' Keyword
+BIG ONE HERE
+
+in JS, all functions are firstclass objects. You'd think that invoking one would always create a new local scope, and bind the 'this' context to it. Not so!
+
+- 'this' is dynamically assigned whenever a function is invoked
+- when a function is invoked as a *method*, _i.e. obj.method_, _'this'_ is bound to _'obj'_
+- However, when a funtion is invoked *by itself*, like so: _function()_, _'this'_ becomes the _global namespace_
+
+```javascript
+function foo() {
+    this.variable = "potential accidental global";
+}
+
+foo();
+variable //=> "potential accidental global"
+```
+
+```javascript
+function bar() {
+    this.prop = "another accidental global";
+}
+
+class SomeClass {
+  constructor() {
+    this.bar = bar();
+  }
+}
+
+let cls = new SomeClass();
+
+prop //=> "another accidental global"
+```
+
+```javascript
+function fizz() {
+    this.buzz = "yet another accidental global";
+}
+
+class AnotherClass {
+  constructor() {
+  }
+
+  makeGlobalVariable() {
+    fizz();
+  }
+}
+
+let cls = new AnotherClass();
+
+buzz //=> "yet another accidental global"
+```
+As you can see, invoking a function on its own will reassign the context to global *even if* the invocation was in a local context.
+
+- this is why we bind the context of a class's instance methods in the constructor, like this:
+
+```javascript
+function foo() {
+    this.variable = "l o c a l b o y e";
+}
+
+class SomeClass {
+  constructor() {
+    this.foo = foo.bind(this);
+    this.makeLocalVariable = this.makeLocalVariable.bind(this);
+  }
+
+  makeLocalVariable() {
+    this.constructor.variable = this.foo();
+  }
+}
+
+let cls = new SomeClass();
+
+variable //=> ReferenceError: variable is not defined
+```
+
+
+
 - global variables won't be garbage collected
 - avoid having large global variables, even explicitly
 - beware of large caches for this reason
