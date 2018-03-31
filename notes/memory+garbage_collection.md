@@ -16,4 +16,23 @@ but hasn't been returned to the OS
 - an unwanted reference is a pointer to a piece of memory that is no longer needed in a program
 - this is basically the dearth between deterministic garbage collection algorithms, and the undecidable (mostly human) element of finding memory leaks
 
+### 3 Common Leak Types in JavaScript
 
+##### Accidental Global Variables
+- if you don't declare with let, const, or var, the variable is implicitly declared in the global scope (on the window), eg:
+
+```javascript
+function someFunc() {
+  a = "hidden global variable"
+}
+```
+is equivalent to: 
+```javascript
+function someFunc() {
+  window.a = "hidden global variable"
+}
+```
+
+- global variables won't be garbage collected
+- avoid having large global variables, even explicitly
+- beware of large caches for this reason
