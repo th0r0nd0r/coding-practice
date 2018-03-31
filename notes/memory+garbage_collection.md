@@ -18,7 +18,7 @@ but hasn't been returned to the OS
 
 ### 3 Common Leak Types in JavaScript
 
-##### Accidental Global Variables
+#### 1. Accidental Global Variables
 - if you don't declare with let, const, or var, the variable is implicitly declared in the global scope (on the window), eg:
 
 ```javascript
@@ -115,3 +115,9 @@ variable //=> ReferenceError: variable is not defined
 - global variables won't be garbage collected
 - avoid having large global variables, even explicitly
 - beware of large caches for this reason
+
+
+#### 2. Forgotten timers or callbacks
+
+#### 3. Out of DOM References
+- if you store DOM nodes in an outside data structure, make sure to delete the data structure if you delete the nodes
