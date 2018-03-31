@@ -68,5 +68,34 @@ class IntSet {
   }
 }
 
+class ResizingIntSet {
+  constructor(numBuckets = 20) {
+    this.store = new Array();
+    while (this.store.length < numBuckets) {
+      this.store.push([]);
+    }
+    this.numBuckets = this.store.length;
+    this.count = 0;
+  }
 
+  insert(num) {
+
+  }
+
+  remove(num) {
+
+  }
+
+  include(num) {
+
+  }
+
+  _bucket(num) {
+
+  }
+
+  _resize() {
+
+  }
+}
 
