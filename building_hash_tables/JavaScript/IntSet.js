@@ -79,23 +79,46 @@ class ResizingIntSet {
   }
 
   insert(num) {
+    if (this.count >= this.numBuckets) {
+      this._resize();
+    }
 
+    this._bucket(num).push(num);
+    this.count++;
   }
 
   remove(num) {
-
+    let bucket = this._bucket(num);
+    let idx = bucket.indexOf(num);
+    if (idx !== -1) {
+      bucket.splice(idx, 1);
+    }
   }
 
   include(num) {
-
+    let bucket = this._bucket(num);
+    return bucket.indexOf(num) !== -1;
   }
 
   _bucket(num) {
-
+    return this.store[Math.abs(num % this.numBuckets)];
   }
 
   _resize() {
+    let newSize = this.numBuckets * 2;
+    let newStore = new Array();
+    while (newStore.length < this.numBuckets * 2) {
+      this.store.push([]);
+    }
 
+    this.store.forEach(function(bucket) {
+      bucket.forEach(function(num) {
+        newStore[Math.abs(num % newSize)].push(num);
+      });
+    });
+
+    this.store = newStore;
   }
 }
+
 
