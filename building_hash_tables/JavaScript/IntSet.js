@@ -34,12 +34,20 @@ class MaxIntSet {
 
 class IntSet {
   constructor(numBuckets = 20) {
-    this.store = new Array(numBuckets);
+    this.store = new Array();
+    while (this.store.length < numBuckets) {
+      this.store.push([]);
+    }
     this.numBuckets = this.store.length;
+
+    this.insert = this.insert.bind(this);
+    this.remove = this.remove.bind(this);
+    this.include = this.include.bind(this);
+    this._bucket = this._bucket.bind(this);
   }
 
   insert(num) {
-    this.store[num % this.numBuckets].push(num);
+    this._bucket(num).push(num);
   }
 
   remove(num) {
@@ -56,7 +64,9 @@ class IntSet {
   }
 
   _bucket(num) {
-    return this.store[num % this.numBuckets];
+    return this.store[Math.abs(num % this.numBuckets)];
   }
 }
+
+
 
