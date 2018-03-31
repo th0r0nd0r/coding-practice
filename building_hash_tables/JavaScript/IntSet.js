@@ -6,10 +6,11 @@ class MaxIntSet {
     this.insert = this.insert.bind(this);
     this.remove = this.remove.bind(this);
     this.include = this.include.bind(this);
+    this._inBounds = this._inBounds.bind(this);
   }
 
   insert(num) {
-    if (num < 0 || num > this.max) {
+    if (!this._inBounds(num)) {
       throw "Out of bounds";
     } 
 
@@ -23,6 +24,11 @@ class MaxIntSet {
   }
 
   include(num) {
-    return this.store[num];
+    return (this._inBounds(num) && this.store[num]);
+  }
+
+  _inBounds(num) {
+    return (num > 0 && num < this.max);
   }
 }
+
