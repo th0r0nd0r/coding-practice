@@ -51,7 +51,8 @@ class IntSet {
   }
 
   include(num) {
-
+    let bucket = this._bucket(num);
+    return bucket.indexOf(num) !== -1;
   }
 
   _bucket(num) {
