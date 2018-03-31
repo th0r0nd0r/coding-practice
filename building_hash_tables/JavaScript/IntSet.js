@@ -126,9 +126,5 @@ class ResizingIntSet {
 
 const set = new ResizingIntSet(2);
 
-set.insert(38);
-set.insert(234);
-set.insert(-3);
-set.remove(-3);
-console.log(set);
+
 
