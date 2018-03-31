@@ -74,6 +74,7 @@ class ResizingIntSet
     end
 
     self[num] << num
+    @count += 1
   end
 
   def remove(num)
@@ -98,7 +99,7 @@ class ResizingIntSet
     new_store = Array.new(num_buckets * 2) { Array.new }
     @store.each do |bucket|
       bucket.each do |num|
-        new_store[num % num_buckets * 2] << num
+        new_store[num % (num_buckets * 2)] << num
       end
     end
 
