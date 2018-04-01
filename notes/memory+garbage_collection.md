@@ -103,6 +103,7 @@ class SomeClass {
   makeLocalVariable() {
     this.constructor.variable = this.foo();
   }
+
 }
 
 let cls = new SomeClass();
@@ -123,3 +124,4 @@ variable //=> ReferenceError: variable is not defined
 - if you store DOM nodes in an outside data structure, make sure to delete the data structure if you delete the nodes
 - references to inner nodes: if you store a reference to a child node and then remove its parent from the DOM tree, the parent will still remain in memory
 - make sure to remove references to a node's children if you want to delete it's entire subtree
+
