@@ -6,3 +6,4 @@
 - promises
 - event loops
 - bit manipulation
+- make hashing function in JS
