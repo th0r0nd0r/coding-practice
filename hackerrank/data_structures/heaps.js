@@ -44,8 +44,8 @@ class Heap {
 
   }
 
-  swap() {
-
+  swap(i, j) {
+    [i,j] = [j,i]
   }
 
   childIndices() {
@@ -61,7 +61,7 @@ class Heap {
   }
 
   heapifyUp() {
-    
+
   }
 
 }
