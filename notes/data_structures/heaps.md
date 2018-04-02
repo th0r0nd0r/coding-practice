@@ -24,3 +24,7 @@ B => B => S => S => S => G => G
 - Extract: O(log n)
 
 ### Heap DS Implementation (Array)
+ 
+#### Finding Child Indices
+- Left Child: 2i + 1
+- Right Child: 2i + 2
