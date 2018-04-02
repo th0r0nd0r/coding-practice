@@ -25,6 +25,8 @@ class Heap {
 
     this.count = this.count.bind(this);
     this.peek = this.peek.bind(this);
+    this.swap = this.swap.bind(this);
+    this.childIndices = this.childIndices.bind(this);
 
   }
 
@@ -45,11 +47,20 @@ class Heap {
   }
 
   swap(i, j) {
-    [i,j] = [j,i]
+    [i,j] = [j,i];
   }
 
-  childIndices() {
+  childIndices(parentIdx) {
+    const length = this.count();
+    const indices = [];
+    for (let i = 1; i < 3; i++) {
+      let childIdx = parentIdx * 2 + i;
+      if (childIdx < length ) {
+        indices.push(childIdx);
+      }
+    }
 
+    return indices;
   }
 
   parentIndices() {
