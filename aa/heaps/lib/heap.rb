@@ -20,11 +20,12 @@ class BinaryMinHeap
   def push(val)
   end
 
-  def swap!(array, i1, i2)
+  
+  public
+  def self.swap!(array, i1, i2)
     array[i1], array[i2] = array[i2], array[i1]
   end
 
-  public
   def self.child_indices(len, parent_index)
     indices = []
     for i in (1..2)
@@ -56,7 +57,14 @@ class BinaryMinHeap
     parent = array[parent_idx]
     child = array[child_idx]
 
-    if prc.call(child, parent) >= 0
+    if prc.call(child, parent) < 0
+      self.swap!(array, child_idx, parent_idx)
+      if parent_idx != 0
+        heapify_up(array, parent_idx, len, &prc)
+      end
+    end
 
+    array
   end
+
 end
