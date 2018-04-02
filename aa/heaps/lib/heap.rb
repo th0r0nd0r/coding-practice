@@ -13,6 +13,13 @@ class BinaryMinHeap
   end
 
   def extract
+    extracted = @store.shift
+    @store.unshift(@store.pop)
+
+    # byebug
+    self.class.heapify_down(@store, 0, count)
+
+    extracted
   end
 
   def peek
@@ -54,13 +61,18 @@ class BinaryMinHeap
     prc ||= Proc.new {|a, b| a <=> b}
     child_idcs = child_indices(len, parent_idx)
     if !child_idcs.empty?
-      left_child = array[child_idcs[0]]
-      right_child = array[child_idcs[1]]
+      if child_idcs.length == 2
+        left_child = array[child_idcs[0]]
+        right_child = array[child_idcs[1]]
 
-      if left_child <= right_child
-        min_child_idx = child_idcs[0]
+        if left_child <= right_child
+          min_child_idx = child_idcs[0]
+        else
+          min_child_idx = child_Idcs[1]
+        end
       else
-        min_child_idx = child_Idcs[1]
+        min_child_idx = 0
+        min_child = child_idcs[0]
       end
 
       
