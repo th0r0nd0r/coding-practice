@@ -22,12 +22,46 @@ function processData(input) {
 class Heap {
   constructor() {
     this.store = [];
+
     this.count = this.count.bind(this);
+    this.peek = this.peek.bind(this);
+
   }
 
   count() {
     return this.store.length;
   }
 
-  
+  extract() {
+
+  }
+
+  peek() {
+    return this.store[0];
+  }
+
+  push() {
+
+  }
+
+  swap() {
+
+  }
+
+  childIndices() {
+
+  }
+
+  parentIndices() {
+
+  }
+
+  heapifyDown() {
+
+  }
+
+  heapifyUp() {
+    
+  }
+
 }
