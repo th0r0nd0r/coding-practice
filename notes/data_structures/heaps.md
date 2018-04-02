@@ -9,7 +9,7 @@ B => B => S => S => S => G => G
 
 - items with higher priority have to be closer to the front
 
-### Heap Implementation
+### Heap ADT Rules
 - Usually represented as binary trees (binary heap)
 (the rest of this section will focus on binary heaps)
 
@@ -22,3 +22,5 @@ B => B => S => S => S => G => G
 - Peek: O(1)
 - Insert: O(log n)
 - Extract: O(log n)
+
+### Heap DS Implementation (Array)
