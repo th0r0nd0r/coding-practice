@@ -38,9 +38,9 @@ describe BinaryMinHeap do
         -1 * (el1 <=> el2)
       end
 
-      expect(BinaryMinHeap.heapify_down([1, 2, 3], 0, &prc))
+      expect(BinaryMinHeap.heapify_down([1, 2, 3], 3, &prc))
         .to eq([3, 2, 1])
-      expect(BinaryMinHeap.heapify_down([1, 5, 4, 3], 0, &prc))
+      expect(BinaryMinHeap.heapify_down([1, 5, 4, 3], 4, &prc))
         .to eq([5, 3, 4, 1])
     end
 
