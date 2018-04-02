@@ -48,7 +48,12 @@ class Heap {
   }
 
   swap(i, j) {
-    this.store[i,j] = this.store[j,i];
+    if (i < this.count() && j < this.count()) {
+      const el1 = this.store[i];
+      const el2 = this.store[j];
+      this.store[i] = el2;
+      this.store[j] = el1;
+    }
   }
 
   childIndices(parentIdx) {
