@@ -18,3 +18,16 @@ function processData(input) {
       }
   });
 } 
+
+class Heap {
+  constructor() {
+    this.store = [];
+    this.count = this.count.bind(this);
+  }
+
+  count() {
+    return this.store.length;
+  }
+
+  
+}
