@@ -28,3 +28,7 @@ B => B => S => S => S => G => G
 #### Finding Child Indices
 - Left Child: 2i + 1
 - Right Child: 2i + 2
+
+#### Finding Parent Index (Integer Division)
+- Parent: (i - 1) / 2
+- Only works for Integer division
