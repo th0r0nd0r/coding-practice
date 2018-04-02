@@ -63,8 +63,12 @@ class Heap {
     return indices;
   }
 
-  parentIndices() {
+  parentIndices(childIdx) {
+    if (childIdx === 0) {
+      throw "root has no parent";
+    }
 
+    return Math.trunc((childIdx - 1) / 2);
   }
 
   heapifyDown() {
