@@ -77,8 +77,11 @@ class Heap {
     return Math.trunc((childIdx - 1) / 2);
   }
 
-  heapifyDown() {
-
+  heapifyDown(parentIdx) {
+    let childIdcs = this.childIndices(parentIdx);
+    if (childIdcs.length === 2) {
+     let 
+    }
   }
 
   heapifyUp(childIdx) {
@@ -96,4 +99,15 @@ class Heap {
     }
   } 
 
+}
+
+function testRecursion(arr, count) {
+  const firstEl = arr[0];
+  arr.push(firstEl);
+  arr.shift();
+  if (count === 0) {
+    return arr;
+  } else {
+    return testRecursion(arr, count - 1);
+  }
 }
