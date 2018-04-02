@@ -27,6 +27,7 @@ class Heap {
     this.peek = this.peek.bind(this);
     this.swap = this.swap.bind(this);
     this.childIndices = this.childIndices.bind(this);
+    this.parentIndex = this.parentIndex.bind(this);
 
   }
 
@@ -47,7 +48,7 @@ class Heap {
   }
 
   swap(i, j) {
-    [i,j] = [j,i];
+    this.store[i,j] = this.store[j,i];
   }
 
   childIndices(parentIdx) {
@@ -63,7 +64,7 @@ class Heap {
     return indices;
   }
 
-  parentIndices(childIdx) {
+  parentIndex(childIdx) {
     if (childIdx === 0) {
       throw "root has no parent";
     }
@@ -75,8 +76,19 @@ class Heap {
 
   }
 
-  heapifyUp() {
+  heapifyUp(childIdx) {
+    if (childIdx !== 0) {
+      let parentIdx = this.parentIndex(childIdx);
+      let parent = this.store[parentIdx];
+      let child = this.store[childIdx];
 
-  }
+      if (child < parent) {
+        this.swap(childIdx, parentIdx);
+        if (parentIdx !== 0) {
+          this.heapifyUp(parentIdx);
+        }
+      }
+    }
+  } 
 
 }
