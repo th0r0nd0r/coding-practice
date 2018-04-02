@@ -10,15 +10,35 @@ class HashMap
   end
 
   def include?(key)
+    list = bucket(key)
+    list.include?(key)
   end
 
   def set(key, val)
+    if @count >= @store.length - 1
+      resize!
+    end
+
+    list = bucket(key)
+    if list.include?(key)
+      list.update(key, val)
+    else
+      list.append(key, val)
+      @count += 1
+    end
   end
 
   def get(key)
+    list = bucket(key)
+    list.get(key)
   end
 
   def delete(key)
+    list = bucket(key)
+    if list.include?(key)
+      list.remove(key)
+      @count -= 1
+    end
   end
 
   def each
@@ -42,9 +62,18 @@ class HashMap
   end
 
   def resize!
+    old_store = @store
+    new_store = Array.new(num_buckets * 2) { LinkedList.new }
+    @store = new_store
+    old_store.each do |bucket|
+      bucket.each do |node|
+        set(node.key, node.val)
+      end
+    end
   end
 
   def bucket(key)
-    # optional but useful; return the bucket corresponding to `key`
+    num = key.hash
+    bucket = @store[num % num_buckets]
   end
 end
