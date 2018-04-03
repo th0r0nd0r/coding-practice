@@ -76,7 +76,7 @@ function inPlaceQuicksort(arr, start, end, comp) {
 
 
 // optomized quicksort, in place with random pivot
-function optomizedQuicksort(arr, start, end, comp) {
+function optimizedQuicksort(arr, start, end, comp) {
   if ((end - start) < 1) {
     return arr;
   }
@@ -97,12 +97,12 @@ function optomizedQuicksort(arr, start, end, comp) {
   }
 
   swap(arr, start, partition - 1);
-  inPlaceQuicksort(arr, start, partition - 2, comp);
-  inPlaceQuicksort(arr, partition, end, comp);
+  optimizedQuicksort(arr, start, partition - 2, comp);
+  optimizedQuicksort(arr, partition, end, comp);
 
   return arr;
 }
 
-console.log(optomizedQuicksort([6,4,5,-2,8,3,9], 0, 6, comparator));
-console.log(inPlaceQuicksort([0,0,0,1,0], 0, 4, comparator));
-console.log(inPlaceQuicksort([-3,2.4,5.88, 1, -6], 0, 4, comparator));
+console.log(optimizedQuicksort([6,4,5,-2,8,3,9], 0, 6, comparator));
+console.log(optimizedQuicksort([0,0,0,1,0], 0, 4, comparator));
+console.log(optimizedQuicksort([-3,2.4,5.88, 1, -6], 0, 4, comparator));
