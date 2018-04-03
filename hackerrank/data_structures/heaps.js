@@ -17,7 +17,11 @@ class Heap {
   }
 
   extract() {
+    const extracted = this.store.shift();
+    this.store.unshift(this.store.pop());
+    this.heapifyDown(0);
 
+    return extracted;
   }
 
   peek() {
