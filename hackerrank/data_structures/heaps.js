@@ -1,24 +1,3 @@
-// "heap" with search functionality to find arbitrary elements
-
-function processData(input) {
-  const heap = [];
-  const inputArr = input.split('\n');
-  inputArr.splice(0,1);
-  // console.log(inputArr);
-  
-  inputArr.forEach(function(el, i) {
-      if (el[0] === '3') {
-          // shift the first element and heapify down            
-      } else if (el[0] === '1') {
-          // push the element and heapify up            
-      } else {
-          // use DFS to find the given element,
-          // swap with first element
-          // heapify up
-      }
-  });
-} 
-
 class Heap {
   constructor() {
     this.store = [];
@@ -45,8 +24,9 @@ class Heap {
     return this.store[0];
   }
 
-  push() {
-
+  push(val) {
+    this.store.push(val);
+    self.heapifyUp(this.count() - 1);
   }
 
   swap(i, j) {
@@ -134,3 +114,25 @@ function testRecursion(arr, count) {
     return testRecursion(arr, count - 1);
   }
 }
+
+
+// "heap" with search functionality to find arbitrary elements
+
+function processData(input) {
+  const heap = [];
+  const inputArr = input.split('\n');
+  inputArr.splice(0,1);
+  // console.log(inputArr);
+  
+  inputArr.forEach(function(el, i) {
+      if (el[0] === '3') {
+          // shift the first element and heapify down            
+      } else if (el[0] === '1') {
+          // push the element and heapify up            
+      } else {
+          // use DFS to find the given element,
+          // swap with first element
+          // heapify up
+      }
+  });
+} 
