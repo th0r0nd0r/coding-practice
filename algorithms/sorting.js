@@ -44,20 +44,25 @@ function inPlaceQuicksort(arr, start, end, comp) {
     return arr;
   }
 
+  // set the pivot to the first element and partition after it
   const pivot = arr[start];
   let partition = start + 1;
 
   for (let i = start + 1; i <= end; i++) {
     let el = arr[i];
+
+    // if el < pivot, place el in front of partition, and move partition forward
+    // this basically puts el on the left side of the sub-array for recursion
     if (comp(el, pivot) <= 0) {
-      if (i !== start + 1) {
-        swap(arr, partition, i);
-      }
+      swap(arr, partition, i);
       partition++;
     }
   }
 
+  // swap the pivot with the first el left of the partition, locking it into place
   swap(arr, start, partition - 1);
+
+  // sort everything left and right of the pivot
   inPlaceQuicksort(arr, start, partition - 2, comp);
   inPlaceQuicksort(arr, partition, end, comp);
 
@@ -76,6 +81,7 @@ function optomizedQuicksort(arr, start, end, comp) {
     return arr;
   }
 
+  // pick a random pivot and swap it with the first element
   const pivotIdx = Math.floor(Math.random() * (end - start + 1)) + start;
   const pivot = arr[pivotIdx];
   swap(arr, start, pivotIdx);
@@ -85,9 +91,7 @@ function optomizedQuicksort(arr, start, end, comp) {
   for (let i = start + 1; i <= end; i++) {
     let el = arr[i];
     if (comp(el, pivot) <= 0) {
-      if (i !== start + 1) {
-        swap(arr, partition, i);
-      }
+      swap(arr, partition, i);
       partition++;
     }
   }
