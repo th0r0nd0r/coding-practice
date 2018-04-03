@@ -3,9 +3,9 @@ require 'byebug'
 class BinaryMinHeap
   attr_reader :store, :prc
 
-  def initialize(&prc)
+  def initialize(prc = Proc.new {|a, b| a <=> b})
     @store = []
-    @prc = prc || Proc.new {|a, b| a <=> b}
+    @prc = prc
   end
 
   def count
@@ -40,9 +40,9 @@ class BinaryMinHeap
   def self.child_indices(len, parent_index)
     indices = []
     for i in (1..2)
-      child = parent_index * 2 + i
-      if child < len
-        indices << child
+      child_idx = parent_index * 2 + i
+      if child_idx < len
+        indices << child_idx
       end
     end
 
@@ -68,11 +68,10 @@ class BinaryMinHeap
         if left_child <= right_child
           min_child_idx = child_idcs[0]
         else
-          min_child_idx = child_Idcs[1]
+          min_child_idx = child_idcs[1]
         end
       else
-        min_child_idx = 0
-        min_child = child_idcs[0]
+        min_child_idx = child_idcs[0]
       end
 
       
