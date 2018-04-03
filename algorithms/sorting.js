@@ -76,7 +76,10 @@ function optomizedQuicksort(arr, start, end, comp) {
     return arr;
   }
 
-  const pivot = arr[start];
+  const pivotIdx = Math.floor(Math.random() * (end - start + 1)) + start;
+  const pivot = arr[pivotIdx];
+  swap(arr, start, pivotIdx);
+
   let partition = start + 1;
 
   for (let i = start + 1; i <= end; i++) {
@@ -95,3 +98,7 @@ function optomizedQuicksort(arr, start, end, comp) {
 
   return arr;
 }
+
+console.log(optomizedQuicksort([6,4,5,-2,8,3,9], 0, 6, comparator));
+console.log(inPlaceQuicksort([0,0,0,1,0], 0, 4, comparator));
+console.log(inPlaceQuicksort([-3,2.4,5.88, 1, -6], 0, 4, comparator));
