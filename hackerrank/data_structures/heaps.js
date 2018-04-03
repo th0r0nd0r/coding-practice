@@ -28,6 +28,8 @@ class Heap {
     this.swap = this.swap.bind(this);
     this.childIndices = this.childIndices.bind(this);
     this.parentIndex = this.parentIndex.bind(this);
+    this.heapifyUp = this.heapifyUp.bind(this);
+    this.heapifyDown = this.heapifyDown.bind(this);
 
   }
 
