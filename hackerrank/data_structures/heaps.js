@@ -78,9 +78,28 @@ class Heap {
   }
 
   heapifyDown(parentIdx) {
-    let childIdcs = this.childIndices(parentIdx);
-    if (childIdcs.length === 2) {
-     let 
+    const childIdcs = this.childIndices(parentIdx);
+    if (childIdcs.length > 0) {
+      let minChildIdx;
+      if (childIdcs.length === 2) {
+        const leftChild = this.store[childIdcs[0]];
+        const rightChild = this.store[childIdcs[1]]; 
+        if (leftChild <= rightChild) {
+          minChildIdx = childIdcs[0];
+        } else {
+          minChildIdx = childIdcs[1];
+        }
+      } else if (childIdcs.length === 1) {
+        minChildIdx = 0;
+      }
+
+      const minChild = this.store[minChildIdx];
+      const parent = this.store[parentIdx];
+
+      if (parent > minChild) {
+        this.swap(parentIdx, minChildIdx);
+        this.heapifyDown(minChildIdx);
+      }
     }
   }
 
@@ -101,6 +120,8 @@ class Heap {
 
 }
 
+
+// test function shows that it's ok to use const in recursion
 function testRecursion(arr, count) {
   const firstEl = arr[0];
   arr.push(firstEl);
