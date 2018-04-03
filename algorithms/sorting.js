@@ -28,6 +28,7 @@ function quickSort(arr, comp) {
   return quickSort(leftSide, comp).concat([pivot]).concat(quickSort(rightSide, comp));
 }
 
-console.log(quickSort([2,4,5,8,3,9], comparator));
-console.log(quickSort([0,0,0,1,0], comparator));
-console.log(quickSort([-3,2.4,5.88, 1, -6], comparator));
+// console.log(quickSort([2,4,5,8,3,9], comparator));
+// console.log(quickSort([0,0,0,1,0], comparator));
+// console.log(quickSort([-3,2.4,5.88, 1, -6], comparator));
+
