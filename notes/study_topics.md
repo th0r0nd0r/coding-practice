@@ -24,6 +24,9 @@
 - Hash Tables
   + implement with arrays/linked lists
 
+- Hard Algorithms
+  + n Queens
+
 
 ### Further Review
 - Trees
@@ -36,6 +39,9 @@
 
 - Hash Tables
   + get really fast at making w/ only arrays in JS
+
+- Algorithms
+  + n Queens
 
 ### To Study
 - Sorting
@@ -59,3 +65,4 @@
   + basic traversal algos (computational complexity, tradeoffs and implementation):
     - BFS
     - DFS
+  + Djikstra's algorithm
