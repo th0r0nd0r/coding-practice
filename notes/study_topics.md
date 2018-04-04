@@ -27,6 +27,8 @@
 - Hard Algorithms
   + n Queens
 
+- Sorting
+  + Quicksort
 
 ### Further Review
 - Trees
@@ -43,8 +45,6 @@
 - Algorithms
   + n Queens
 
-- Sorting
-  + Quicksort
 
 ### To Study
 - Sorting
