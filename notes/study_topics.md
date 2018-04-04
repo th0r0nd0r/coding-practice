@@ -45,6 +45,9 @@
 - Algorithms
   + n Queens
 
+- Sorting
+  + redo algorithms on Array.prototype
+
 
 ### To Study
 - Sorting

@@ -103,7 +103,41 @@ function optimizedQuicksort(arr, start, end, comp) {
   return arr;
 }
 
-console.log(optimizedQuicksort([6,4,5,-2,8,3,9], 0, 6, comparator));
-console.log(optimizedQuicksort([0,0,0,1,0], 0, 4, comparator));
-console.log(optimizedQuicksort([-3,2.4,5.88, 1, -6], 0, 4, comparator));
-console.log(optimizedQuicksort([5,8,1,3,7,9,2], 0, 6, comparator));
+// console.log(optimizedQuicksort([6,4,5,-2,8,3,9], 0, 6, comparator));
+// console.log(optimizedQuicksort([0,0,0,1,0], 0, 4, comparator));
+// console.log(optimizedQuicksort([-3,2.4,5.88, 1, -6], 0, 4, comparator));
+// console.log(optimizedQuicksort([5,8,1,3,7,9,2], 0, 6, comparator));
+
+function mergeSort(arr, comp) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const sorted = [];
+
+  const midPoint = Math.trunc(arr.length / 2);
+  const leftSide = arr.slice(0, midPoint);
+  const rightSide = arr.slice(midPoint);
+
+  const sortedLeft = mergeSort(leftSide);
+  const sortedRight = mergeSort(rightSide);
+  const minLength = Math.min(sortedLeft.length, sortedRight.length);
+
+  for (let i = 0; i < minLength; i++) {
+    let left = sortedLeft[i];
+    let right = sortedRight[i];
+
+    if (comp(left, right) <= 0) {
+      sorted.push(sortedLeft.shift());
+    } else {
+      sorted.push(sortedRight.shift());
+    }
+  }
+
+  sorted.concat(sortedLeft);
+  sorted.concat(sortedRight);
+
+  return sorted;
+}
+
+console.log(mergeSort([6,4,5,-2,8,3,9], comparator));
