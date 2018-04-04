@@ -43,9 +43,11 @@
 - Algorithms
   + n Queens
 
-### To Study
 - Sorting
   + Quicksort
+
+### To Study
+- Sorting
   + Mergesort
   + know when to use each
 
