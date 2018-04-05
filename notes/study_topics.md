@@ -29,6 +29,7 @@
 
 - Sorting
   + Quicksort
+  + Mergesort
 
 ### Further Review
 - Trees
@@ -51,8 +52,8 @@
 
 ### To Study
 - Sorting
-  + Mergesort
   + know when to use each
+  + in-place mergesort a linked list
 
 - Trees
   + n-ary

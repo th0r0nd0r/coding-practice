@@ -106,3 +106,31 @@ var isValid = function(s) {
     }
 };
 
+// reverse a linked list in place, iteratively
+var reverseList = function(head) {
+    if (head === null || head.next === null) {
+        return head;
+    }
+
+    let p, c , h;
+    p = head;
+    c = head;
+    h = head;
+    
+    if (h === p) {
+        c = p.next;
+        h = c.next;
+        p.next = null;
+    }
+    
+    while (c.next !== null) {
+        c.next = p;
+        p = c;
+        c = h;
+        h = h.next;
+    }
+    
+    c.next = p;
+    
+    return c;
+};
