@@ -147,3 +147,6 @@ function mergeSort(arr, comp) {
 }
 
 console.log(mergeSort([6,4,5,-2,8,3,9], comparator));
+console.log(mergeSort([0,0,0,1,0], comparator));
+console.log(mergeSort([-3,2.4,5.88, 1, -6], comparator));
+console.log(mergeSort([5,8,1,3,7,9,2], comparator));

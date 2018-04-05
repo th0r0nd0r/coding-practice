@@ -71,3 +71,6 @@
     - BFS
     - DFS
   + Djikstra's algorithm
+
+- Other Topics
+  + Backtracking
