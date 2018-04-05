@@ -38,6 +38,9 @@
 
 - more Stack/Queue problems
 
+- Linked Lists
+  + reverse a linked list from m to n
+
 - Heaps/heap sort
 
 - Hash Tables
