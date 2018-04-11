@@ -14,3 +14,16 @@ Ex:
 
 - **Cardinality:** number of vertices in a graph
 - **Degree** of a vertex Vn: number of edges connected to Vn
+
+### Representations
+
+- **Adjacency List:** a key, value pairing of vertices with their connected neighbors.
+
+Ex: {
+  V1: (V2,V3,V4),
+  V2: (V1),
+  V3: (V1),
+  V4: (V1,V3),
+  V5: (V4, V6),
+  V6: (V5)
+}
