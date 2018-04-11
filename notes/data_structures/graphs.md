@@ -14,6 +14,7 @@ Ex:
 
 - **Cardinality:** number of vertices in a graph
 - **Degree** of a vertex Vn: number of edges connected to Vn
+_ **Trees:** graphs with no loops or circuits (the only way to get from a vertex Vn back to Vn is to backtrack)
 
 ### Representations
 
