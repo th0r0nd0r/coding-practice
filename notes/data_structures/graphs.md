@@ -16,11 +16,8 @@ Ex:
 - **Degree** of a vertex Vn: number of edges connected to Vn
 - **Isomorphic:** graphs with identical vertices and edges (can be drawn differently)
 - **Parallel Edges:** multiple edges connecting the same two vertices
-- **Simple Path:** a path that uses edges at most once
-- **Euler Path:** a path in a multigraph (includes regular graphs) that includes all edges exactly once
-- **Euler Circuit:** an euler path whose start and end vertices are the same
-- **Hamiltonian Path** visits every vertex exactly once
-- **Hamiltonian Circuit:** Hamiltonian path that starts/ends on the same vertex 
+
+
 
 ### Representations
 
@@ -53,12 +50,20 @@ _ **Trees:** graphs with no loops or circuits (the only way to get from a vertex
 - **Multigraphs:** graphs in which we allow loops and parallel edges
 
 ### Paths/Circuits
+- **Simple Path:** a path that uses edges at most once
 
 #### Euler Paths/Circuits
+- **Euler Path:** a path in a multigraph (includes regular graphs) that includes all edges exactly once
+- **Euler Circuit:** an euler path whose start and end vertices are the same
+
 - Circuits: A graph hsa an euler circuit *only* if all vertices have *even degree*
 - Paths: all vertices have even degree *except* two that have odd degree
 - No Euler path is possible if > 2 vertices have odd degree
 
 #### Hamiltonian Paths/Circuits
+- **Hamiltonian Path** visits every vertex exactly once
+- **Hamiltonian Circuit:** Hamiltonian path that starts/ends on the same vertex 
+
 - If you have a circuit, you have a path (just remove an edge)
 - no general theorem to tell if a hamiltonian path is possible
+- specific case (Dirac): a simple graph with n vertices (n >= 3) is Hamiltonian if every vertex has degree n / 2 or greater
