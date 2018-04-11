@@ -51,4 +51,5 @@ _ **Trees:** graphs with no loops or circuits (the only way to get from a vertex
 - **Multigraphs:** graphs in which we allow loops and parallel edges
 
 ### Euler Paths/Circuits
-- A graph hsa an euler circuit *only* if all vertices have *even degree*
+- Circuits: A graph hsa an euler circuit *only* if all vertices have *even degree*
+- Paths: all vertices have even degree *except* two that have odd degree
