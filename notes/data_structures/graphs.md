@@ -14,7 +14,8 @@ Ex:
 
 - **Cardinality:** number of vertices in a graph
 - **Degree** of a vertex Vn: number of edges connected to Vn
-_ **Trees:** graphs with no loops or circuits (the only way to get from a vertex Vn back to Vn is to backtrack)
+- **Isomorphic:** graphs with identical vertices and edges (can be drawn differently)
+- **Parallel Edges:** multiple edges connecting the same two vertices
 
 ### Representations
 
@@ -40,3 +41,8 @@ Ex:
   000101
   000010
 ] 
+
+### Types of Graphs
+
+_ **Trees:** graphs with no loops or circuits (the only way to get from a vertex Vn back to Vn is to backtrack)
+- **Multigraphs:** graphs in which we allow loops and parallel edges
