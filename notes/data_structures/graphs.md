@@ -27,3 +27,15 @@ Ex: {
   V5: (V4, V6),
   V6: (V5)
 }
+
+- **Adjacency Matrix:** A binary matrix representing connected vertices. Gets used often.
+
+Ex: 
+[
+  011100
+  100000
+  100000
+  100010
+  000101
+  000010
+] 
