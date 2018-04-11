@@ -60,3 +60,5 @@ _ **Trees:** graphs with no loops or circuits (the only way to get from a vertex
 - No Euler path is possible if > 2 vertices have odd degree
 
 #### Hamiltonian Paths/Circuits
+- If you have a circuit, you have a path (just remove an edge)
+- no general theorem to tell if a hamiltonian path is possible
