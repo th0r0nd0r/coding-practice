@@ -48,6 +48,7 @@ Ex:
 
 _ **Trees:** graphs with no loops or circuits (the only way to get from a vertex Vn back to Vn is to backtrack)
 - **Multigraphs:** graphs in which we allow loops and parallel edges
+- **Simple Graphs (Strict Graphs):** unweighted, undirected, containing no loops or parallel edges
 
 ### Paths/Circuits
 - **Simple Path:** a path that uses edges at most once
