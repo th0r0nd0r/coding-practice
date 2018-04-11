@@ -10,3 +10,7 @@ Ex:
 - V: {V1, V2, V3, V4, V5, V6}
 - E: {{V1,V2},{V1,V3},{V1,V4},{V4,V5},{V5,V6}}
 
+### Terminology
+
+- **Cardinality:** number of vertices in a graph
+- **Degree** of a vertex Vn: number of edges connected to Vn
