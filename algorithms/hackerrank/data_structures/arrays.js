@@ -64,3 +64,34 @@ function findSuffix(collections, queryString) {
 
     return count;
 }
+
+// Array Manipulation - add values to a range in the array and return the max value
+
+function arrayManipulation(n, queries) {
+    const list = [];
+    const finalValues = [];
+    for (let i = 0; i < n; i++) {
+        list.push(0);
+    }
+    
+    queries.forEach(function(quer) {
+        let start = quer[0] - 1;
+        let end = quer[1];
+        let val = quer[2];
+        
+        list[start] += val;
+        if (end < list.length) {
+            list[end] -= val;   
+        }
+    });
+    
+    let accum = 0;
+    let max = list[0];
+    
+    list.forEach(function(el) {
+        accum += el;
+        max = Math.max(accum, max);
+    });
+
+    return max;
+}
