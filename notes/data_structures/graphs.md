@@ -19,6 +19,8 @@ Ex:
 - **Simple Path:** a path that uses edges at most once
 - **Euler Path:** a path in a multigraph (includes regular graphs) that includes all edges exactly once
 - **Euler Circuit:** an euler path whose start and end vertices are the same
+- **Hamiltonian Path** visits every vertex exactly once
+- **Hamiltonian Circuit:** Hamiltonian path that starts/ends on the same vertex 
 
 ### Representations
 
@@ -50,7 +52,11 @@ Ex:
 _ **Trees:** graphs with no loops or circuits (the only way to get from a vertex Vn back to Vn is to backtrack)
 - **Multigraphs:** graphs in which we allow loops and parallel edges
 
-### Euler Paths/Circuits
+### Paths/Circuits
+
+#### Euler Paths/Circuits
 - Circuits: A graph hsa an euler circuit *only* if all vertices have *even degree*
 - Paths: all vertices have even degree *except* two that have odd degree
 - No Euler path is possible if > 2 vertices have odd degree
+
+#### Hamiltonian Paths/Circuits
