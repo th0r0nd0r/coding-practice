@@ -18,7 +18,7 @@ Ex:
 - **Parallel Edges:** multiple edges connecting the same two vertices
 - **Simple Path:** a path that uses edges at most once
 - **Euler Path:** a path in a multigraph (includes regular graphs) that includes all edges exactly once and has different start and end vertices
-- **Euler Circle:** an euler path whose start and end vertices are the same
+- **Euler Circuit:** an euler path whose start and end vertices are the same
 
 ### Representations
 
@@ -49,3 +49,6 @@ Ex:
 
 _ **Trees:** graphs with no loops or circuits (the only way to get from a vertex Vn back to Vn is to backtrack)
 - **Multigraphs:** graphs in which we allow loops and parallel edges
+
+### Euler Paths/Circuits
+- A graph hsa an euler circuit *only* if all vertices have *even degree*
