@@ -17,7 +17,7 @@ Ex:
 - **Isomorphic:** graphs with identical vertices and edges (can be drawn differently)
 - **Parallel Edges:** multiple edges connecting the same two vertices
 - **Simple Path:** a path that uses edges at most once
-- **Euler Path:** a path in a multigraph (includes regular graphs) that includes all edges exactly once and has different start and end vertices
+- **Euler Path:** a path in a multigraph (includes regular graphs) that includes all edges exactly once
 - **Euler Circuit:** an euler path whose start and end vertices are the same
 
 ### Representations
@@ -53,3 +53,4 @@ _ **Trees:** graphs with no loops or circuits (the only way to get from a vertex
 ### Euler Paths/Circuits
 - Circuits: A graph hsa an euler circuit *only* if all vertices have *even degree*
 - Paths: all vertices have even degree *except* two that have odd degree
+- No Euler path is possible if > 2 vertices have odd degree
