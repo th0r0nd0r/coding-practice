@@ -51,3 +51,16 @@ function main() {
   console.log(maxSum);
 }
 
+// sparse arrays - find the # of occurences of a string in an array of strings
+
+function findSuffix(collections, queryString) {
+    let count = 0;
+    
+    collections.forEach(function(str) {
+        if (str === queryString) {
+            count++;
+        }
+    });
+
+    return count;
+}
