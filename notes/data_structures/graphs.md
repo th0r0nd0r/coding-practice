@@ -16,6 +16,9 @@ Ex:
 - **Degree** of a vertex Vn: number of edges connected to Vn
 - **Isomorphic:** graphs with identical vertices and edges (can be drawn differently)
 - **Parallel Edges:** multiple edges connecting the same two vertices
+- **Simple Path:** a path that uses edges at most once
+- **Euler Path:** a path in a multigraph (includes regular graphs) that includes all edges exactly once and has different start and end vertices
+- **Euler Circle:** an euler path whose start and end vertices are the same
 
 ### Representations
 
