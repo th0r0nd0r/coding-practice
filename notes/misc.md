@@ -11,6 +11,9 @@
 
 ### Rails Stuff
 
+#### Controllers
+- use instance variables @variable to give views access to items
+
 #### Forms
 - form tag
   + input tags (type=text/textarea, etc.)
@@ -28,5 +31,7 @@
 
 - for 'update' forms,
   + start the form as a 'post' form
+  + <form action="<%= book_url(@book) %>" method="post">
   + as the first input, do this:
   + type='hidden' name='_method' value='PATCH'
+  + for normal inputs, add: value="<%= @book.title %>"
