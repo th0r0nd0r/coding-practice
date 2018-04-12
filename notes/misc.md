@@ -18,6 +18,11 @@
   + 'action' field is the route (e.g. '/books')
   + the 'name' field on inputs corresponds to the params
   + nest params like this: 'book[title]'
+  - dropdowns
+    + select tag
+    + <option disabled selected> --please select-- </option>
+    + <option value="fiction">fiction</option>
+
 
 - for 'new' forms (method='post'),
 
