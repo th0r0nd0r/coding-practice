@@ -35,3 +35,5 @@
   + as the first input, do this:
   + type='hidden' name='_method' value='PATCH'
   + for normal inputs, add: value="<%= @book.title %>"
+  + for dropdowns, instead of having a default selected, do:
+    - <=% @book.category == "Fiction" ? "selected" : "" %>
