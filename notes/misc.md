@@ -37,3 +37,6 @@
   + for normal inputs, add: value="<%= @book.title %>"
   + for dropdowns, instead of having a default selected, do:
     - <=% @book.category == "Fiction" ? "selected" : "" %>
+
+- use partials if time permits, e.g:
+  + <%= render 'form', book: @book, action: :edit %>
