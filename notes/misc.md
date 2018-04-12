@@ -12,10 +12,14 @@
 ### Rails Stuff
 
 #### Forms
-- for 'new' forms (method='post'),
+- form tag
+  + input tags (type=text/textarea, etc.)
+  + input tag (type=submit)
   + 'action' field is the route (e.g. '/books')
   + the 'name' field on inputs corresponds to the params
   + nest params like this: 'book[title]'
+
+- for 'new' forms (method='post'),
 
 - for 'update' forms,
   + start the form as a 'post' form
