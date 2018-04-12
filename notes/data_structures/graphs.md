@@ -68,3 +68,8 @@ _ **Trees:** graphs with no loops or circuits (the only way to get from a vertex
 - If you have a circuit, you have a path (just remove an edge)
 - no general theorem to tell if a hamiltonian path is possible
 - specific case (Dirac): a simple graph with n vertices (n >= 3) is Hamiltonian if every vertex has degree n / 2 or greater
+
+### Common Algorithms
+
+#### Dijkstra's
+- algorithm to find the cheapest (or shortest, etc.) path between two points in a weighted graph
