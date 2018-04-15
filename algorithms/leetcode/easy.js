@@ -134,3 +134,6 @@ var reverseList = function(head) {
     
     return c;
 };
+
+//  trim a binary search tree so all values are in [L,R]
+
