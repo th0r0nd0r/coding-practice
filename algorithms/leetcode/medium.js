@@ -274,7 +274,6 @@ function compare(int1, int2) {
 
 var merge = function(intervals) {
     const ints = intervals.sort(compare);
-    console.log(ints);
     for (let i = 1; i < ints.length; i++) {
         let int = ints[i];
         let overlap = findOverlap(ints[i - 1], ints[i]);
