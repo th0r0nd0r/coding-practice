@@ -76,7 +76,7 @@ class Heap {
           minChildIdx = childIdcs[1];
         }
       } else if (childIdcs.length === 1) {
-        minChildIdx = 0;
+        minChildIdx = childIdcs[0];
       }
 
       const minChild = this.store[minChildIdx];
