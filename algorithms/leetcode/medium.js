@@ -290,15 +290,15 @@ var merge = function(intervals) {
 
 // group shifted strings
 
+
 function charDistance(c1, c2) {
-    // console.log("distances")
-    const big = Math.max(c1,c2);
-    const small = Math.min(c1,c2);
-    const d1 = Math.abs(big - small);
-    const d2 = Math.abs(big - 24 - small);
-    // console.log(d1,d2);
-    // console.log();
-    return Math.min(d1,d2);
+    const dist = c2 - c1;
+    if (dist < 0) {
+        // note: in Ruby, negative % positive == positive - negative, not so in JS
+        return dist + 26;
+    } else {
+        return dist % 26;
+    }
 }
 
 var groupStrings = function(strings) {
@@ -308,9 +308,6 @@ var groupStrings = function(strings) {
         for (let i = 0; i < str.length - 1; i++) {
             let char1 = str.charCodeAt(i);
             let char2 = str.charCodeAt(i + 1);
-            // console.log("char codes");
-            // console.log(char1-97,char2-97);
-            // console.log();
             distances.push(charDistance(char1,char2));
         } 
         
@@ -323,3 +320,6 @@ var groupStrings = function(strings) {
     
     return Object.values(strs);
 };
+
+
+// 
