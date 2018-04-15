@@ -294,7 +294,7 @@ var merge = function(intervals) {
 function charDistance(c1, c2) {
     const dist = c2 - c1;
     if (dist < 0) {
-        // note: in Ruby, negative % positive == positive - negative, not so in JS
+        // note: ruby interprets negative modulo divisor as (n-1), js doesn't
         return dist + 26;
     } else {
         return dist % 26;
