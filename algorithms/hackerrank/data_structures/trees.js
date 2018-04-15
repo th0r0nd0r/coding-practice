@@ -42,3 +42,23 @@ if (root === null) {
   let maxHeight = Math.max(leftHeight, rightHeight) + 1;
   return maxHeight;
 }
+
+// level order binary tree traversal
+
+function levelOrder(root) {
+  let nodeQueue = [root];
+  const nodes = [root.data];
+ while (nodeQueue.length > 0) {
+     let node = nodeQueue.pop();
+     if (node.left) {
+         nodeQueue.unshift(node.left);
+         nodes.push(node.left.data);
+     }
+     if (node.right) {
+         nodeQueue.unshift(node.right);
+         nodes.push(node.right.data);
+     }
+ }
+  
+  console.log(nodes.join(' '));
+}
