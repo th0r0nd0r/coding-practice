@@ -140,3 +140,34 @@ var reverseBetween = function(head, m, n) {
         return p;
     }
 };
+
+// find a peak element in an array.  Redo with binary search (this method is still worst case O(n))
+var findPeakElement = function(nums) {
+    let i = 0;
+function checkPeak(idx) {
+    let num = nums[idx];
+    let left = nums[idx - 1];
+    let right = nums[idx + 1];
+
+    if (idx === 0) {
+        left = num - 1;
+    }
+    
+    if (idx === nums.length - 1) {
+        right = num - 1;
+    } 
+    // console.log(num, left, right);
+    
+    if (Math.max(num, left, right) === num) {
+        return idx;
+    }
+
+    if (right > num) {
+        return checkPeak(idx + 1);
+    } else {
+        return -1;
+    }
+}
+
+return checkPeak(i);
+};
