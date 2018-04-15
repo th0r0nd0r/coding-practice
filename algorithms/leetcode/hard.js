@@ -89,3 +89,28 @@ var solveNQueens = function(n) {
 
 };
 
+
+// the skyline problem
+
+// initialize points array
+// create sorted array/list to store rightside and height (sorted by rightside)
+// create binary max heap to store building heights (pre-filled with 0 for the ground)
+
+// iterate through coords
+// push first into points
+// - for each coord:
+//      - push rightside + height onto sorted list
+//      - if MaxHeap.max == 0:
+//          - push new coord with x = l, y = h
+//      - add height to MaxHeap
+// - if left > min el on sorted list || if just added the final el:
+//      - remove els from list until left < min el (or until empty if last el added)
+//      - for every el removed from list:
+//            - if height of el == MaxHeap.max:
+//                  - remove from maxheap
+//                  - if maxheap height changes:
+//                      - push new point to array with x = r (from sorted list), y = new max height
+
+// if h > hprev:
+//     - push coords into array
+// 
