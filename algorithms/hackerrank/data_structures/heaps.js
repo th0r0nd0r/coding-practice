@@ -30,7 +30,7 @@ class Heap {
 
   push(val) {
     this.store.push(val);
-    self.heapifyUp(this.count() - 1);
+    this.heapifyUp(this.count() - 1);
   }
 
   swap(i, j) {
