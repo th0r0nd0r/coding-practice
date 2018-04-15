@@ -1,3 +1,4 @@
+// binary min heap. change heapify up/down to switch to max haep.
 class Heap {
   constructor() {
     this.store = [];
