@@ -204,3 +204,62 @@ var search = function(nums, target) {
     
     return -1;
 };
+
+
+
+
+// merge intervals
+
+function findOverlap(int1, int2) {
+    const overlap = [];
+    let i1 = int1;
+    let i2 = int2;
+    
+    if (int2.start <= int1.start) {
+        [i1, i2] = [i2, i1];
+    }
+    
+    const start = i1.start;
+    let end = null;
+    
+    if (i1.end >= i2.start) {
+        if (i1.end > i2.end) {
+            end = i1.end
+        } else {
+            end = i2.end;
+        }
+    }
+    
+    if (end) {
+        overlap.push(new Interval(start,end));
+    } else {
+        overlap.push(int1,int2);
+    }
+    
+    return overlap;
+}
+
+var merge = function(intervals) {
+    const intSet = new Set();
+    let merged = false;
+    
+    for (let i = 0; i < intervals.length; i++) {
+        let int1 = intervals[0];
+        for (let j = i + 1; j < intervals.length; j++) {
+            let int2 = intervals[j];
+            let overlap = findOverlap(int1,int2);
+            if (overlap.length === 1) {
+                // console.log(overlap);
+                // console.log([int1,int2]);
+                // console.log(overlap == [int1,int2]);
+                // console.log();
+                intervals.splice(intervals.indexOf(int1),1);
+                intervals.splice(intervals.indexOf(int2),1);
+                intervals.push(overlap[0]);
+                return merge(intervals);
+            }
+        }
+    }
+    
+    return intervals;
+};
