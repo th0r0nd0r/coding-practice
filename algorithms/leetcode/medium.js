@@ -249,10 +249,6 @@ var merge = function(intervals) {
             let int2 = intervals[j];
             let overlap = findOverlap(int1,int2);
             if (overlap.length === 1) {
-                // console.log(overlap);
-                // console.log([int1,int2]);
-                // console.log(overlap == [int1,int2]);
-                // console.log();
                 intervals.splice(intervals.indexOf(int1),1);
                 intervals.splice(intervals.indexOf(int2),1);
                 intervals.push(overlap[0]);
@@ -262,4 +258,32 @@ var merge = function(intervals) {
     }
     
     return intervals;
+};
+
+// ~ 3x faster (still not fast)
+
+function compare(int1, int2) {
+    if (int1.start < int2.start) {
+        return -1;
+    } else if (int1.start === int2.start) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+var merge = function(intervals) {
+    const ints = intervals.sort(compare);
+    console.log(ints);
+    for (let i = 1; i < ints.length; i++) {
+        let int = ints[i];
+        let overlap = findOverlap(ints[i - 1], ints[i]);
+        
+        if (overlap.length === 1) {
+            ints.splice(i - 1, 2, overlap[0]);
+            i--;
+        }
+    }
+    
+    return ints;
 };
