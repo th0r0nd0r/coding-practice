@@ -135,7 +135,6 @@ var reverseList = function(head) {
     return c;
 };
 
-//  trim a binary search tree so all values are in [L,R]
 
 // create a bst insert function that only adds nodes as leaves
 function insert(root, data) {
@@ -157,3 +156,23 @@ function insert(root, data) {
     
     return root;
 }
+
+//  trim a binary search tree so all values are in [L,R]
+var trimBST = function(root, L, R) {
+    if (!root) {
+        return null;
+    }
+    
+    if (root.val < L) {
+        return trimBST(root.right, L, R);
+    } else if (root.val > R) {
+        return trimBST(root.left, L, R);
+    }
+    
+    if (root) {
+        root.left = trimBST(root.left, L, R);
+        root.right = trimBST(root.right, L, R);
+    }
+    
+    return root;
+};
