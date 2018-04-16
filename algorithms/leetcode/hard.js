@@ -116,6 +116,14 @@ var solveNQueens = function(n) {
 //     - push coords into array
 // 
 
+class Point {
+  constructor(l,r,h) {
+      this.left = l;
+      this.right = r;
+      this.height = h;
+  }
+}
+
 class SortedPoints {
   constructor() {
       this.compare = function compare(a,b) {
