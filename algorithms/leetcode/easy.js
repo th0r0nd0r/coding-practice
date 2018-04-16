@@ -176,3 +176,35 @@ var trimBST = function(root, L, R) {
     
     return root;
 };
+
+
+
+// Strobogrammatic number
+
+var isStrobogrammatic = function(num) {
+    const couples = {
+        "6": "9",
+        "9": "6",
+        "8": "8",
+        "1": "1",
+        "0": "0"
+    };
+    
+    for (let i = 0; i <= Math.trunc(num.length / 2 - 1); i++) {
+        let n = num[i];
+    
+        if (!couples[n]) {
+            return false;
+        } else if (num[num.length - i - 1] !== couples[n]) {
+            return false;
+        }
+        
+        if (num.length > 1 && num.length % 2 !== 0) {
+            if (!couples[num[i+1]]) {
+                return false;
+            }
+        }
+    }
+    
+    return true;
+};

@@ -163,7 +163,7 @@ var getSkyline = function(buildings) {
                         critPoints.push([
                             el.right,
                             newHeight
-                        ])
+                        ]);
                         console.log("height decrease");
                         console.log(critPoints);
                         console.log();
