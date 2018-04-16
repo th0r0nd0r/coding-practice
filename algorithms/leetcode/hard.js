@@ -92,6 +92,7 @@ var solveNQueens = function(n) {
 
 // the skyline problem
 
+// import heap class from heaps.js
 // initialize points array
 // create sorted array/list to store rightside and height (sorted by rightside)
 // create binary max heap to store building heights (pre-filled with 0 for the ground)
@@ -114,3 +115,38 @@ var solveNQueens = function(n) {
 // if h > hprev:
 //     - push coords into array
 // 
+
+class SortedPoints {
+  constructor() {
+      this.compare = function compare(a,b) {
+          if (a.right < b.right) {
+              return -1;
+          } else if (a.right === b.right) {
+              return 0;
+          } else {
+              return 1;
+          }
+      };
+
+      this.points = [];
+      
+      this.push = this.push.bind(this);
+      this.sort = this.sort.bind(this);
+      this.extract = this.extract.bind(this);
+  }
+  
+  push(val) {
+      this.points.push(val);
+      this.sort();
+  }
+  
+  sort() {
+      this.points.sort(this.compare);
+  }
+  
+  extract() {
+      const val = this.points.shift();
+      this.sort();
+      return val;
+  }
+}
