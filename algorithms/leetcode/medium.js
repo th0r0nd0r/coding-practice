@@ -354,3 +354,40 @@ var wiggleSort = function(nums) {
         partition++;
     }
 };
+
+
+
+// Binary Tree Longest Consecutive Sequence
+
+function findPath(root, len) {
+    if (root === null) {
+        return len;
+    }
+
+    let leftLen = 1;
+    let rightLen = 1;
+
+    if (root.left) {
+        if (root.left.val === root.val + 1) {
+            leftLen = len + 1;
+        }
+    }
+    if (root.right) {
+        if (root.right.val === root.val + 1) {
+            rightLen = len + 1;
+        }
+    }
+
+    const leftPath = findPath(root.left, leftLen)
+    const rightPath = findPath(root.right, rightLen);
+
+    return Math.max(leftPath,rightPath, len);
+}
+
+var longestConsecutive = function(root) {
+    if (root === null) {
+        return 0;
+    }
+    
+    return findPath(root, 1);
+};
