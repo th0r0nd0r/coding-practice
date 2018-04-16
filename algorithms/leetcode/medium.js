@@ -378,7 +378,7 @@ function findPath(root, len) {
         }
     }
 
-    const leftPath = findPath(root.left, leftLen)
+    const leftPath = findPath(root.left, leftLen);
     const rightPath = findPath(root.right, rightLen);
 
     return Math.max(leftPath,rightPath, len);
