@@ -322,4 +322,35 @@ var groupStrings = function(strings) {
 };
 
 
-// 
+
+
+// Wiggle Sort
+
+
+// Note: Don't need to sort it at the start, 
+// you can just iterate through once and compare/swap elements with their neighbors
+var wiggleSort = function(nums) {
+    nums = nums.sort();
+    let partition = 1;
+    let store = nums.length - 1;
+    let wiggle = true;
+    while (partition < nums.length) {
+        let inStore = nums[store];
+        let first = nums[partition];
+        
+        if (wiggle) {
+            if (inStore > first) {
+                nums[store] = first;
+                nums[partition] = inStore;
+            } 
+            wiggle = false;
+        } else {
+            if (inStore < first) {
+                nums[store] = first;
+                nums[partition] = inStore;
+            }
+            wiggle = true;
+        }
+        partition++;
+    }
+};
