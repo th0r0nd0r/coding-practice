@@ -12,3 +12,10 @@
 **Model ==> Model**
 **Template ==> View**
 **View ==> Controller**
+
+## Commands
+
+#### Running the development server
+- bash: python manage.py runserver
+- zsh: ./manage.py runserver
+
