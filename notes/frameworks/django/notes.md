@@ -100,3 +100,9 @@ in this case, deleting the game will delete all of its associated moves
 #### Migrations
 - Python scripts
 - keep db structure in sync with code
+
+##### Checking for Changes
+- to see what changes you've made to models that haven't been reflected in the database tables, run:
+```python manage.py makemigrations```
+- this will create new migrations for you to update the db based on your changed models.
+- NOTE: for this to work, your app must be in the installed apps list in settings.py
