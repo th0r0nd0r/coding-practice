@@ -76,6 +76,12 @@ class Move(models.Model):
 
 - most fields in Django are set to disallow null values by default
 
+##### Model Field Options
+- passed as arguments to the class being instantiated as the model's attribute:
+```python
+Models.IntegerField(null = True)
+```
+
 #### Foreign Keys (one-to-many relations)
 - instead of ActiveRecord associations, we assign table relations in a similar way to adding columns:
 - we can give aliases to the foreign-keyed classes/tables with *related_name*
@@ -106,3 +112,6 @@ in this case, deleting the game will delete all of its associated moves
 ```python manage.py makemigrations```
 - this will create new migrations for you to update the db based on your changed models.
 - NOTE: for this to work, your app must be in the installed apps list in settings.py
+
+##### Running Migrations
+```python manage.py <app name> <migration number (or full name)>```
