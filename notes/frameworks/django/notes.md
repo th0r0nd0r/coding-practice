@@ -46,12 +46,25 @@ urlpatterns = [
 - contains models, views, templates, urls
 - function as mini-web apps
 - most Django projects contain several
+- can be designed to be reused between projects
 
 
 ### Models
 - Python classes
 - mapped to database tables
 - each object is a row in the table
+
+#### Inheritance
+- all models must inherit from the base model class
+- this allows them to represent a table in the database
+syntax:
+
+```python
+class Move(models.Model):
+```
+
+#### Columns
+- to add columns to a model, just assign variables
 
 #### Migrations
 - Python scripts
