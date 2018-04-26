@@ -76,7 +76,7 @@ class Move(models.Model):
 
 - most fields in Django are set to disallow null values by default
 
-#### Foreign Keys
+#### Foreign Keys (one-to-many relations)
 - instead of ActiveRecord associations, we assign table relations in a similar way to adding columns:
 - we can give aliases to the foreign-keyed classes/tables with *related_name*
 
@@ -87,6 +87,15 @@ class Game(models.Model):
     second_player = models.ForeignKey(User,
                                         related_name="games_second_player")
 ```
+
+- starting with Django 2, every foreign key will need an on_delete attribute, e.g.:
+
+```python
+class Move(models.Model):
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+```
+
+in this case, deleting the game will delete all of its associated moves
 
 #### Migrations
 - Python scripts
