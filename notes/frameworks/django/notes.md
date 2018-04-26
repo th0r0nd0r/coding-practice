@@ -115,3 +115,14 @@ in this case, deleting the game will delete all of its associated moves
 
 ##### Running Migrations
 ```python manage.py <app name> <migration number (or full name)>```
+
+#### Migration Workflow
+1. Change model code
+2. Generate migration script + edit if necessary
+```python manage.py makemigrations```
+```python manage.py showmigrations```
+```python manage.py sqlmigrate <appname> <migrationname> #show SQL for specific migration```
+3. Run migrations
+```python manage.py migrate```
+
+
