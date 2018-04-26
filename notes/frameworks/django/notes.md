@@ -65,8 +65,7 @@ class Move(models.Model):
 
 #### Columns
 - to add columns to a model, just assign variables
-- the columns also inherit from the models (class?/module?)
-
+- columns are instances of classes from the models module:
 
 ```python
 class Move(models.Model):
