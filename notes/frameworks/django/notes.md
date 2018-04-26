@@ -71,6 +71,21 @@ class Move(models.Model):
 class Move(models.Model):
     x = models.IntegerField()
     y = models.IntegerField()
+    comment = models.CharField(max_length=300, blank=True)
+```
+
+- most fields in Django are set to disallow null values by default
+
+#### Foreign Keys
+- instead of ActiveRecord associations, we assign table relations in a similar way to adding columns:
+- we can give aliases to the foreign-keyed classes/tables with *related_name*
+
+```python
+class Game(models.Model):
+    first_player = models.ForeignKey(User,
+                                        related_name="games_first_player")
+    second_player = models.ForeignKey(User,
+                                        related_name="games_second_player")
 ```
 
 #### Migrations
