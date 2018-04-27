@@ -143,3 +143,17 @@ def __str__(self):
         self.first_player, self.second_player
     )
 ```
+
+#### Customizing the Admin Site
+- adding dropdowns:
+
+```python
+GAME_STATUS_CHOICES = (
+    ("F", "First player's move"),
+    ("S", "Second player's move"),
+)
+
+class Game(models.Model):
+    # other columns
+    status = models.CharField(max_length=1, default='F', choices=GAME_STATUS_CHOICES)
+```
