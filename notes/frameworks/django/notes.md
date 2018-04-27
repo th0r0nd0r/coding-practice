@@ -64,6 +64,7 @@ class Move(models.Model):
 ```
 
 #### Columns
+- Django Field classes
 - to add columns to a model, just assign variables
 - columns are instances of classes from the models module:
 
@@ -71,7 +72,7 @@ class Move(models.Model):
 class Move(models.Model):
     x = models.IntegerField()
     y = models.IntegerField()
-    comment = models.CharField(max_length=300, blank=True)
+    comment = models.CharField(max_length=300, blank=True)  
 ```
 
 - most fields in Django are set to disallow null values by default
@@ -125,4 +126,20 @@ in this case, deleting the game will delete all of its associated moves
 3. Run migrations
 ```python manage.py migrate```
 
+### Admin Site/ Model API
+- the admin app is installed by default (admin.py)
+- urlpatterns configured for admin site by default
 
+#### Commands
+- create superuser to login to the admin site: ```python manage.py createsuperuser```
+
+#### Displaying Info
+- define a __str__ method
+(if using python2, need to import some unicode modules)
+Within a model (Game):
+```python
+def __str__(self):
+    return "{0} vs {1}".format(
+        self.first_player, self.second_player
+    )
+```
