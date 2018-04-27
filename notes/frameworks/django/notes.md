@@ -191,6 +191,26 @@ Game.objects.all() #gives a QuerySet of all Game objects
 g=Game.objects.get(pk=1) #gets one Game object with primary key = 1
 
 g.status = 'S' #changes the value of the 'status' column locally in the shell
-g.save() #executes the appropirate SQL query to save all local changes to the database
+g.save() #executes the appropirate SQL insert to save all local changes to the database
 
+Game.objects.filter(status='F') #filters by field name
+Game.objects.exclude(status='F') #filters by exclusion
+Game.objects.filter(second_player__username="bill") # __ lets you access the fields of a foreign-keyed table
+g.move_set.count() #returns the number of moves in a game
 ```
+
+### Managers
+
+#### Objects
+- every class gets a default 'objects' manager (e.g. Game.objects.all()) that lets you manipulate it
+
+#### One-to-Many Relations
+- the "one" side gets a xxx_set attribute
+- xxx is name of related model
+- this is a 'related manager' object
+- works just like 'objects' manager
+
+##### Setting new relations
+- from Move m to Game g:
+    + m.game=g, or
+    + g.move_set.add(m)
