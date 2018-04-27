@@ -126,7 +126,7 @@ in this case, deleting the game will delete all of its associated moves
 3. Run migrations
 ```python manage.py migrate```
 
-### Admin Site/ Model API
+### Admin Site
 - the admin app is installed by default (admin.py)
 - urlpatterns configured for admin site by default
 
@@ -181,4 +181,13 @@ class Game(models.Model):
 class GameAdmin(admin.ModelAdmin):
     list_display = ('id', 'first_player', 'second_player', 'status') #what you see in the list display for the model
     list_editable = ('status',) # lets you edit the field from list display
+```
+
+### The Model API
+```python manage.py shell``` gives access to django
+```python
+from gameplay.models import Game, Move
+Game.objects.all() #gives a QuerySet of all Game objects
+g=Game.objects.get(pk=1) #gets one Game with primary key = 1
+
 ```
