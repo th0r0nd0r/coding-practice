@@ -130,18 +130,30 @@ in this case, deleting the game will delete all of its associated moves
 - the admin app is installed by default (admin.py)
 - urlpatterns configured for admin site by default
 
+#### Registering Models with the Admin Site
+```python
+# in admin.py
+from django.contrib import admin
+from .models import Game
+admin.site.register(Game)
+```
+
+
 #### Commands
 - create superuser to login to the admin site: ```python manage.py createsuperuser```
 
 #### Displaying Info
 - define a __str__ method
-(if using python2, need to import some unicode modules)
-Within a model (Game):
 ```python
 def __str__(self):
     return "{0} vs {1}".format(
         self.first_player, self.second_player
     )
+```
+- if using python2, add these lines to your imports:
+```python
+from __future__ import unicode_literals
+from django.utils.encoding import python_2_unicode_compatible
 ```
 
 #### Customizing the Admin Site
