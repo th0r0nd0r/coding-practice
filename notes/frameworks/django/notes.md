@@ -167,5 +167,6 @@ class Game(models.Model):
 ```python
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
-    list_display = ('id', 'first_player', 'second_player', 'status')
+    list_display = ('id', 'first_player', 'second_player', 'status') #what you see in the list display for the model
+    list_editable = ('status',) # lets you edit the field from list display
 ```
