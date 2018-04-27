@@ -157,3 +157,15 @@ class Game(models.Model):
     # other columns
     status = models.CharField(max_length=1, default='F', choices=GAME_STATUS_CHOICES)
 ```
+
+#### ModelAdmin Classes
+- remove line registering the class with admin
+```admin.site.register(Game)```
+
+- replace with the admin class:
+
+```python
+@admin.register(Game)
+class GameAdmin(admin.ModelAdmin):
+    list_display = ('id', 'first_player', 'second_player', 'status')
+```
