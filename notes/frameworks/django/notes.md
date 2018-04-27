@@ -188,6 +188,9 @@ class GameAdmin(admin.ModelAdmin):
 ```python
 from gameplay.models import Game, Move
 Game.objects.all() #gives a QuerySet of all Game objects
-g=Game.objects.get(pk=1) #gets one Game with primary key = 1
+g=Game.objects.get(pk=1) #gets one Game object with primary key = 1
+
+g.status = 'S' #changes the value of the 'status' column locally in the shell
+g.save() #executes the appropirate SQL query to save all local changes to the database
 
 ```
