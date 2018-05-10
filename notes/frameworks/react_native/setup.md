@@ -15,7 +15,7 @@
 ```react-native init <project name>```
 
 ### Running the App
-```react-native run-ios```
+(with emulator running) ```react-native run-ios```
 
 
 ## Android
@@ -61,3 +61,6 @@
     - double-click the device to open
     - wait for the emulater to load, then run:
     - ```react-native run-android```
+
+### Running the App
+(with emulator running) ```react-native run-android```
