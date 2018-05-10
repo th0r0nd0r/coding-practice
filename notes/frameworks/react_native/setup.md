@@ -2,7 +2,7 @@
 
 ## iOS
 
-### Things to Install/update
+### Things to Install/Update
 1. xcode (MAKE SURE TO UPDATE)
     - if new install, open app and install additional components
 2. Homebrew (download from website)
@@ -10,6 +10,10 @@
 4. watchman ```brew install watchman```
 5. React Native cli ```npm install -g react-native-cli```
 6. ESlint ```npm install -g eslint```
+    - configure with your text editor
+
+#### Optional Installations
+- Axios ```npm install --save axios```
 
 ### Starting the Project
 ```react-native init <project name>```
@@ -64,3 +68,7 @@
 
 ### Running the App
 (with emulator running) ```react-native run-android```
+
+
+## Troubleshooting
+check out https://rallycoding.com/blog/troubleshooting-react-native-startup/
