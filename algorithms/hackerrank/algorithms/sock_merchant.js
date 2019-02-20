@@ -1,5 +1,8 @@
 
 
+// first, sort the sock array- n log(n)
+// iterate once and count the pairs- n
+// Time Complexity: n + n log(n) ~ n log(n)
 function sockMerchant(n, ar) {
   const socks = ar.sort();
   let sockCount = 0;
