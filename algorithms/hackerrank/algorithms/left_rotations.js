@@ -1,7 +1,4 @@
-
-
-
-
+// left rotate the array (a) the given number (d) of times.
 
 
 
@@ -39,9 +36,11 @@ function main() {
 
   const a = readLine().split(' ').map(aTemp => parseInt(aTemp, 10));
 
+  // use mod to find the start index of the rotated array
   let idx = d % n;
   const rotatedArr = [];
 
+  // starting from the new index, add each element consecutively, wrapping over to zero once the index goes out of bounds
   for (let i = 0; i < a.length; i++) {
       if (idx >= a.length) {
           idx = 0;
