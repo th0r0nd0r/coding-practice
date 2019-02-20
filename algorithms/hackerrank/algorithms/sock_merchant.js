@@ -1,4 +1,4 @@
-
+// Given an array with integers denoting types of socks, count the total number of matching pairs
 
 // first, sort the sock array- n log(n)
 // iterate once and count the pairs- n
