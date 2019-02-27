@@ -1,14 +1,21 @@
 // find max in stack
 
+// https://www.hackerrank.com/challenges/maximum-element/problem
+
+// Strategy: create a trackStack that maintains the largest element in the stack by:
+// if new el is greater than trackStack.last, push it on the trackStack
+// else, push the max el again
+// pop from both stacks as usual
+
+// Time: O(1)
+// Space: O(n)
+
 function processData(input) {
   const lines = input.split("\n");
   lines.shift();
 
   const stack = [];
-  // const maxEl = parseInt(lines[0].slice(2), 10);
   const trackStack = [];
-  console.log("lines: ", lines);
-  // console.log("max el: ", maxEl);
 
   lines.forEach(function (line, i, arr) {
       if (line[0] === '1') {
@@ -16,11 +23,14 @@ function processData(input) {
           stack.push(el);
           if (trackStack.length === 0 || el > trackStack[trackStack.length - 1]) {
               trackStack.push(el);
-          } else if (!!trackStack.length) {
+          } else if (trackStack.length > 0) {
               trackStack.push(trackStack[trackStack.length - 1]);
           }
       } else if (line[0] === '2') {
-          const 
+          stack.pop();
+          trackStack.pop();
+      } else {
+          console.log(trackStack[trackStack.length - 1]);
       }
   });
 } 
