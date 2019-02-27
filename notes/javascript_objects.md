@@ -16,3 +16,20 @@
 ### instanceof and duck typing
 - rather than checking if an object is an instance of a class inherited from a constructor, *instanceof* just asks if one object is in another object's [[Prototype]] chain
 - **Duck Typing:** a method of type usage/checking based on the properties and methods important to the task at hand. "If it walks like a duck and quacks like a duck then it must be a duck." 
+
+### Type safety
+- important in strongly-typed languages like Java that need a type declaration for variable assignment, e.g.
+```
+String one = 'one'
+```
+the compiler will throw an error if you try to assign the wrong type:
+```
+String one = 1
+```
+operations will also fail if the operator doesn't have a defined meaning for a data type, ex:
+```
+"hello" * 4
+```
+JavaScript is not type safe as it is both loosely-typed and does all kinds of type coercion in order to prevent browser crashes.
+
+### 
