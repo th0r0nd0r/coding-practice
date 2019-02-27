@@ -26,20 +26,28 @@ const c = 'fsac';
 // console.log(isSubstring(a,c));
 // console.log(isSubstring(b, a));
 
-function longEnough(A, B) {
-  for (let i = A.length - 1; i >= 0; i--) {
-      if (A[i] === B[0]) {
-          if (A.slice(i).length >= B.length) {
-              return true;
-          } else {
-              return false;
-          }
-      }
+var repeatedStringMatch = function(A, B) {
+  let tmp = A;
+  let multiples = 1;
+  
+  while (tmp.length < B.length) {
+      tmp += A;
+      multiples += 1;
+      // console.log("A: ", A);
+      // console.log("multiples: ", multiples);
+  }
+
+  
+  if (!isSubstring(tmp, B)) {
+      tmp += A;
+      multiples += 1;
   }
   
-  return true;
-}
+  if (!isSubstring(tmp, B)) {
+      multiples = -1;
+  }
+  
+  return multiples;
+};
 
-const A = 'sdfs';
-const B = 'asd';
-console.log(longEnough(A, B));
+console.log(repeatedStringMatch("abc", "cabcabca"));
