@@ -32,4 +32,9 @@ operations will also fail if the operator doesn't have a defined meaning for a d
 ```
 JavaScript is not type safe as it is both loosely-typed and does all kinds of type coercion in order to prevent browser crashes.
 
-### 
+### scoping of *this* in the prototype chain
+"JavaScript provides a this property, but importantly it is always rooted at the bottom of the [[Prototype]] chain, not whatever level of the chain the current function was found at. While it's true that this.foobar() might end up resolving (finding) foobar() at an ancestor level of the chain, inside that call, his this will still be the original rooted this object."
+
+### .constructor property
+
+"So we have to change how we think of what the .constructor property means. It does not mean "the constructor this object was created by". It actually means "the constructor which creates any objects that end up getting [[Prototype]] linked to this object.""
