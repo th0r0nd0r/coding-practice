@@ -1,7 +1,9 @@
-var MinStack = {
-  createNew: () => (
-      {stack: [], trackStack: []}
-  )
+/**
+ * initialize your data structure here.
+ */
+function MinStack() {
+  this.stack = []; 
+  this.trackStack = [];
 };
 
 /** 
@@ -21,21 +23,22 @@ MinStack.prototype.push = function(x) {
 * @return {void}
 */
 MinStack.prototype.pop = function() {
-  
+  this.trackStack.pop();
+  return this.stack.pop();
 };
 
 /**
 * @return {number}
 */
 MinStack.prototype.top = function() {
-  
+  return this.stack[this.stack.length - 1];
 };
 
 /**
 * @return {number}
 */
 MinStack.prototype.getMin = function() {
-  
+  return this.trackStack[this.trackStack.length - 1];
 };
 
 /** 
