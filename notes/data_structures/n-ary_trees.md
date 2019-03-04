@@ -1,5 +1,5 @@
 # N-ary Trees
-- pretty sure you pronounc it *en-airy*, not *en-areee*, like binary but with n instead of bi
+- pretty sure you pronounce it *en-airy*, not *en-areee*, like binary but with n instead of bi
 
 ### What are They?
 - rooted trees where each node can have no more than n children
