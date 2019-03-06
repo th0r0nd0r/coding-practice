@@ -5,6 +5,7 @@
 - Constructor functions have a .prototype property
   + this is **NOT** the prototype of the constructor function (in the inheritance sense)
   + it is simply a normal object property that references what the prototype **WILL BE** of an object **CREATED BY** the constructor function
+  + the constructor's .prototype object also has a .constructor property referencing back to the constructor function
 
 - all objects have a *special* [[Prototype]] property:
   + this is what the object *actually* "inherits" from
