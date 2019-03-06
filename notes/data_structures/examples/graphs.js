@@ -6,24 +6,28 @@ class UnweightedGraphNode {
 
 class UnweightedGraph {
   constructor() {
-    this.vertexList = [];
+    this.vertices = [];
     this.adjList = [];
-    this.nodes = 
   }
 
   addVertex(data, connections) {
-
+    const vertex = new UnweightedGraphNode(data);
+    this.vertices.push(vertex);
   }
 
   deleteVertex() {
 
   }
 
-  findAdjacentNodes(node) {
+  adjacenttNodes(node) {
 
   }
 
   areConnected(n1, n2) {
 
+  }
+
+  data(nodeIdx) {
+    return this.vertices[nodeIdx].data;
   }
  }
