@@ -16,7 +16,7 @@ class Graph {
       this.vertices.push(vertex);
       this.adjList.push(connections);
       connections.forEach((nodeIdx) => {
-        this.adjList[nodeIdx].push(this.vertices[this.vertices.length - 1]);
+        this.adjList[nodeIdx].push(this.vertices.length - 1);
       });
     } else {
       throw "connections must be an array of integers";
@@ -46,3 +46,22 @@ class Graph {
     return this.vertices[nodeIdx].data;
   }
  }
+
+ function getRandomInt(max) {
+   return Math.floor(Math.random() * Math.floor(max));
+ }
+
+ const testGraph = new Graph();
+ 
+ const nodeData = [3,"hello",['a','b','c'],{3:"something"},43.5];
+ nodeData.forEach((data, i) => {
+   const connections = [];
+  [...Array(i).keys()].forEach(() => {
+    connections.push(getRandomInt(i - 1));
+  });
+
+  testGraph.addVertex(data,connections);
+ });
+
+ console.log("vertices: ", testGraph.vertices);
+ console.log("adjacency list: ", testGraph.adjList);
