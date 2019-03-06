@@ -34,12 +34,12 @@ class Graph {
     this.adjList[nodeIdx] = [];
   }
 
-  adjacenttNodes(node) {
-
+  adjacenttNodes(nodeIdx) {
+    return this.adjList[nodeIdx];
   }
 
   areConnected(n1, n2) {
-
+    return this.adjList[n1].includes(n2);
   }
 
   data(nodeIdx) {
