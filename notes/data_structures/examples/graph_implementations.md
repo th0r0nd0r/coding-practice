@@ -22,6 +22,13 @@
   + finding connections is optimized at O(1)
   + if |E| ~ |V^2| then we're not using much extra space to build the matrix
 
+### Drawbacks
+
+- Bad for Sparse Graphs:
+  + most real world graphs are sparse
+  + uses a TON of extra space
+  + Ex: scanning one row of connections in a social network w/ a billion people will take over *16 minutes*
+
 
 ## Adjacency List
 
@@ -37,4 +44,29 @@
   + **BSTs**
     - extra overhead to maintain balance
     - BUT can find if 2 nodes are connected in O(log(V)) w/ binary search
-    
+
+### Big O
+
+#### Space
+- O(E)
+
+#### Time
+- **Finding Adjacent Nodes:** O(V) (worst case), but in real world will be much smaller
+- **Finding if two nodes are connected:** O(V) (unsorted rows) or O(log(V)) (sorted rows)
+
+### Benefits
+
+- good for Sparse Graphs
+  + most real world graphs are sparse
+  + if a graph is sparse, finding adjacent + connected nodes will take *much* less than O(V)
+  + for example, if we assume a social network user has maximum 1,000 friends, both operations will take ~10ms, since a row's length will never approach the max of V length
+
+### Drawbacks
+
+- bad for Dense Graphs
+  + in a graph where |E| ~ |V^2|, both operations will take close to the worst-case (linear) time
+
+# Conclusion
+
+- For sparse graphs (most real world scenarios), choose the Adjacency List implementation
+- For dense graphs, go for the Adjacency Matrix
