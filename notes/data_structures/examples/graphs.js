@@ -1,5 +1,6 @@
 // this graph is undirected
 // the methods on the class assume that the graph is not empty and that there are no unconnected vertices
+// dfs and bfs currently do not count 'effective' equivalency for Objects and arrays (e.g. {a: 'b'} !== {a: 'b'} and algos will return -1)
 
 class GraphNode {
   constructor(data) {
@@ -51,21 +52,25 @@ class Graph {
     return this.vertices[nodeIdx].data;
   }
 
+  // traversal algos will return the vertex # of the value if it exists, else return -1
+
   recursiveDFS(value) {
     const visited = new Set();
-    const startNode = this.vertices[0];
 
     const traverseChildren = (vIdx) => {
       visited.add(vIdx);
       const children = this.adjList[vIdx];
       for (let i = 0; i < children.length; i++) {
-        const childIdx = children[i];
-        if (!visited.has(childIdx)) {
-          if (this.vertices[childIdx].data === value) {
-            return childIdx;
+        const childNode = children[i];
+        if (!visited.has(childNode)) {
+          if (this.vertices[childNode].data === value) {
+            return childNode;
           } else {
-            visited.add(childIdx);
-            return traverseChildren(childIdx);
+            visited.add(childNode);
+            const branchRtn = traverseChildren(childNode);
+            if (branchRtn > 0) {
+              return branchRtn;
+            }
           }
         }
       }
@@ -80,21 +85,23 @@ class Graph {
 
 
 
-//  function getRandomInt(max) {
-//    return Math.floor(Math.random() * Math.floor(max));
-//  }
+ function getRandomInt(max) {
+   return Math.floor(Math.random() * Math.floor(max));
+ }
 
-//  const testGraph = new Graph();
+ const testGraph = new Graph();
  
-//  const nodeData = [3,"hello",['a','b','c'],{3:"something"},43.5];
-//  nodeData.forEach((data, i) => {
-//    const connections = [];
-//   [...Array(i).keys()].forEach(() => {
-//     connections.push(getRandomInt(i - 1));
-//   });
+ const nodeData = [3,"hello",['a','b','c'],{3:"something"},43.5];
+ nodeData.forEach((data, i) => {
+   const connections = [];
+  [...Array(i).keys()].forEach(() => {
+    connections.push(getRandomInt(i - 1));
+  });
 
-//   testGraph.addVertex(data,connections);
-//  });
+  testGraph.addVertex(data,connections);
+ });
 
-//  console.log("vertices: ", testGraph.vertices);
-//  console.log("adjacency list: ", testGraph.adjList);
+ console.log("vertices: ", testGraph.vertices);
+ console.log("adjacency list: ", testGraph.adjList);
+ console.log("DFS for 'hello': ", testGraph.recursiveDFS('hello'));
+ console.log("DFS for 43.5: ", testGraph.recursiveDFS(43.5));
