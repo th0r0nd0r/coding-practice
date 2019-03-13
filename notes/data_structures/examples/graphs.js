@@ -80,6 +80,28 @@ class Graph {
 
     return traverseChildren(0);
   }
+
+  iterativeDFS(value) {
+    const visited = new Set();
+    const stack = [0];
+
+    while (stack.length > 0) {
+      const currentNodeIdx = stack.pop();
+      if (!visited.has(currentNodeIdx)) {
+        visited.add(currentNodeIdx);
+        if (this.vertices[currentNodeIdx].data === value) {
+          return currentNodeIdx;
+        }
+
+        const children = this.adjList[currentNodeIdx];
+        for (let i = 0; i < children.length; i++) {
+          stack.push(children[i]);
+        }
+      }
+    }
+
+    return -1;
+  }
  }
  
 
@@ -105,3 +127,4 @@ class Graph {
  console.log("adjacency list: ", testGraph.adjList);
  console.log("DFS for 'hello': ", testGraph.recursiveDFS('hello'));
  console.log("DFS for 43.5: ", testGraph.recursiveDFS(43.5));
+ console.log("DFS for 'b': ", testGraph.recursiveDFS('b'));
