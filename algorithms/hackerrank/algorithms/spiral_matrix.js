@@ -1,5 +1,6 @@
 var spiralOrder = function(matrix) {
   const output = [];
+  if (matrix.length === 0) return output;
   // let finished = false;
   
   const nextDirs = {
@@ -41,18 +42,11 @@ var spiralOrder = function(matrix) {
   while (true) {
       output.push(matrix[i][j]);
       visited[i].add(j);
-      console.log(visited);
       
       increment();
-      const {nextI, nextJ} = nextCoords;
       
       let dirSwitches = 0;
-      while (nextI >= height || nextJ >= width || visited[nextI].has(nextJ)) {
-          console.log(nextI, nextJ);
-          console.log(nextI >= height);
-          console.log(nextJ >= width);
-          console.log(visited[nextI].has(nextJ));
-          console.log()
+      while (nextCoords.nextI >= height || nextCoords.nextJ >= width || nextCoords.nextI < 0 || nextCoords.nextJ < 0 || visited[nextCoords.nextI].has(nextCoords.nextJ)) {
       
           if (dirSwitches >= 4) {
               return output;
@@ -64,8 +58,8 @@ var spiralOrder = function(matrix) {
           nextCoords.nextJ = j;
           increment();
       } 
-      i = nextI;
-      j = nextJ;
+      i = nextCoords.nextI;
+      j = nextCoords.nextJ;
   }
   
 };
