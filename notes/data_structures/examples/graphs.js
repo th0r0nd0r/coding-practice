@@ -102,6 +102,10 @@ class Graph {
 
     return -1;
   }
+
+  BFS(value) {
+    
+  }
  }
  
 
@@ -125,6 +129,6 @@ class Graph {
 
  console.log("vertices: ", testGraph.vertices);
  console.log("adjacency list: ", testGraph.adjList);
- console.log("DFS for 'hello': ", testGraph.recursiveDFS('hello'));
- console.log("DFS for 43.5: ", testGraph.recursiveDFS(43.5));
- console.log("DFS for 'b': ", testGraph.recursiveDFS('b'));
+ console.log("DFS for 'hello': ", testGraph.iterativeDFS('hello'));
+ console.log("DFS for 43.5: ", testGraph.iterativeDFS(43.5));
+ console.log("DFS for 'b': ", testGraph.iterativeDFS('b'));
