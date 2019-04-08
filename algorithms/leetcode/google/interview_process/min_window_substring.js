@@ -1,4 +1,6 @@
-var minWindow = function(s, t) {
+var findMinWindow = function(s, t) {
+  if (s === t) {return s;}
+
   const charCounts = {};
   const presentChars = new Set();
   const allChars = new Set();
@@ -11,34 +13,31 @@ var minWindow = function(s, t) {
   }
   
   for (let i = 0; i < s.length; i++) {
-      // console.log("I: ", i);
       const char = s[i];
       
       if (allChars.has(char)) {
           charCounts[char]++;
           presentChars.add(char);
       }
-      
-      // console.log(charCounts);
-      
-      // console.log("present chars: ", presentChars);
-      // console.log("all chars: ", allChars);
-      // console.log(presentChars.size, allChars.size);
-      // console.log(presentChars.size === allChars.size);
+
+      console.log(presentChars, allChars);
       if (presentChars.size === allChars.size) {
-          // console.log("WE IN THE J LOOP");
+        if (presentChars.size === 1) {
+          return char;
+        }
           for (let j = lastJ; j < i; j++) {
-              // console.log("j: ", j);
+            console.log('in the j loop');
               let jChar = s[j];
               if (allChars.has(jChar)) {
                   charCounts[jChar]--;
-                  // console.log(charCounts);
                   if (charCounts[jChar] < 1) {
                       presentChars.delete(jChar);
                       lastJ = j + 1;
-                      console.log("")
+                      console.log("i: ", i);
+                      console.log("j: ", j);
                       const window = s.slice(j, i+1);
-                      if (window.length < minWindow.length || minWindow === "") {minWindow = window};
+                      console.log("window: ", window);
+                      if (window.length < minWindow.length || minWindow === "") {minWindow = window;}
                       break;
                   }
               }
@@ -48,3 +47,7 @@ var minWindow = function(s, t) {
   
   return minWindow;
 };
+
+console.log("starting file");
+
+findMinWindow('ab','a');
