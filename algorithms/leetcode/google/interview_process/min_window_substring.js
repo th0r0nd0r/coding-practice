@@ -1,3 +1,6 @@
+// TODO: redo this without using sets to allow for multiple of the same character
+
+
 var findMinWindow = function(s, t) {
   if (s === t) {return s;}
 
