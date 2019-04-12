@@ -14,9 +14,7 @@ function mergeSubRanges(r0, r1) {
   let mergedRange = [r0, r1];
 
   if (r0[1] >= r1[0]) {
-    const end = r0[1] > r1[1] ? r0[1] : r1[1];
-
-    mergedRange = [[r0[0], end]];
+    mergedRange = [[r0[0], Math.max(r0[1], r1[1])]];
   }
 
   return mergedRange;
