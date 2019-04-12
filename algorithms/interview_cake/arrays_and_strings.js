@@ -61,8 +61,9 @@ const ranges1 = [[1,5], [2,3]];
 // - swap chars at indices, increment i/decrement j until we get to the middle
 // time complexity: O(n)
 
-function inPlaceReverse(chars) {
-  let i = 0, j = chars.length - 1;
+function inPlaceReverse(chars, startIdx=0, endIdx=null) {
+  let i = startIdx;
+  let j = endIdx ? endIdx : chars.length - 1;
 
   while (i < j) {
     let c0 = chars[i];
@@ -80,5 +81,35 @@ function inPlaceReverse(chars) {
 const evenChars = ['a','y','y','o'];
 const oddChars = ['h','e','l','l','o'];
 
-console.log(inPlaceReverse(evenChars));
-console.log(inPlaceReverse(oddChars));
+// console.log(inPlaceReverse(evenChars));
+// console.log(inPlaceReverse(oddChars));
+
+
+
+// input: an array of characters spelling words out in reverse order (but not reversed words)
+// output: an array of characters as words in the right order
+
+// strategy:
+// use inPlaceReverse on initial array
+// use modified inPlaceReverse on each word
+
+function reverseMessage(message) {
+  inPlaceReverse(message);
+
+  let wordStart = 0;
+
+  for (let i = 0; i < message.length + 1; i++) {
+    if (message[i] === ' ' || i === message.length) {
+      inPlaceReverse(message, wordStart, i - 1);
+      wordStart = i + 1;
+    }
+  }
+
+  return message.join("");
+}
+
+const message = [ 'c', 'a', 'k', 'e', ' ',
+'p', 'o', 'u', 'n', 'd', ' ',
+'s', 't', 'e', 'a', 'l' ];
+
+console.log(reverseMessage(message));
