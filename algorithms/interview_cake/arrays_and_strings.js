@@ -112,4 +112,42 @@ const message = [ 'c', 'a', 'k', 'e', ' ',
 'p', 'o', 'u', 'n', 'd', ' ',
 's', 't', 'e', 'a', 'l' ];
 
-console.log(reverseMessage(message));
+// console.log(reverseMessage(message));
+
+
+
+
+
+// input: two sorted lists
+// output: one sorted list
+
+// time complexity: O(n + m)
+
+function mergeSortedLists(l1, l2) {
+  let i = 0, j = 0;
+  const mergedList = [];
+
+  while (i < l1.length || j < l2.length) {
+    if (l1[i] <= l2[j]) {
+      mergedList.push(l1[i]);
+      i++;
+    } else {
+      mergedList.push(l2[j]);
+      j++;
+    }
+  }
+
+  if (i < l1.length) {
+    mergedList.push(l1.slice(i));
+  }
+  if (j < l2.length) {
+    mergedList.push(l2.slice(j));
+  }
+
+  return mergedList;
+}
+
+const myList = [3, 4, 6, 10, 11, 15];
+const alicesList = [1, 5, 8, 12, 14, 19];
+
+console.log(mergeSortedLists(myList, alicesList));
