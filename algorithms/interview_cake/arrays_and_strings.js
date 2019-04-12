@@ -10,34 +10,40 @@
 // - compare their overlaps in order (O(n))
 // time complexity: O(n + n log n) = O(n(1 + log n))
 
-function mergeSubRanges(r1, r2) {
-  let mergedRange = [r1, r2];
+function mergeSubRanges(r0, r1) {
+  let mergedRange = [r0, r1];
 
-  if (r1[1] >= r2[1]) {
-    mergedRange = [[r1[0], r2[1]]];
+  if (r0[1] >= r1[0]) {
+    mergedRange = [[r0[0], r1[1]]];
   }
 
   return mergedRange;
 }
 
 function mergeRanges(ranges) {
-  // maybe sort by end index
   const sortedRanges = ranges.sort((r1, r2) => (r1[0] - r2[0]));
   const mergedRanges = [];
 
-  let i = 0;
-  let currentRange = [];
+  let i = 1;
+  let currentRange = sortedRanges[0];
 
-  while (i < sortedRanges.length - 1) {
-    currentRange = mergeSubRanges(sortedRanges[i], sortedRanges[i + 1]);
+  while (i < sortedRanges.length) {
+     let mergedRange = mergeSubRanges(currentRange, sortedRanges[i]);
 
-    if (currentRange.length !== 1) {
-      mergedRanges.push(currentRange[0]);
-      i++;
+    // push the current range if it can't be combined with the next sorted range
+    if (mergedRange.length === 2 || i === sortedRanges.length - 1) {
+      mergedRanges.push(mergedRange[0]);
+      currentRange = mergedRange[1];
+
     } else {
-      mergedRanges.push(currentRange);
+      currentRange = mergedRange[0];
     }
+    i++;
   }
 
   return mergedRanges;
 }
+
+const ranges0 = [[0,1], [3,5], [4,8], [10,12], [9,10]];
+
+console.log(mergeRanges(ranges0));
