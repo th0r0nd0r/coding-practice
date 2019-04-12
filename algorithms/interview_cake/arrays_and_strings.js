@@ -151,3 +151,44 @@ const myList = [3, 4, 6, 10, 11, 15];
 const alicesList = [1, 5, 8, 12, 14, 19];
 
 console.log(mergeSortedLists(myList, alicesList));
+
+
+
+// a function to determine if a deck has been riffle shuffled once
+// need to redo:
+// - both vals cant start at 0
+// - we are supposed to assume we actually have access to each half of the deck somehow (isRiffle(half1, half2, shuffled))
+function isRiffle(deck) {
+  if (deck.length === 0) {return false;}
+
+  let lastVals = [0,0];
+  let lastValIdx = 0;
+  let idxMod = 1;
+
+  function switchLast() {
+    if (lastValIdx === 0) {
+      lastValIdx = 1;
+      idxMod = -1;
+    } else {
+      lastValIdx = 0;
+      idxMod = 1;
+    }
+
+    lastVals[lastValIdx]++;
+  }
+  
+
+  for (let i = 0; i < 53; i++) {
+    const n = deck[i];
+
+    if (n === lastVals[lastValIdx] + 1) {
+      lastVals[lastValIdx]++;
+    } else if (n === lastVals[lastValIdx + idxMod] + 1) {
+      switchLast();
+    } else {
+      return false;
+    }
+  }
+
+  return true;
+}
