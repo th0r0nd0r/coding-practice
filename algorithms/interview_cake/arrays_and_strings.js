@@ -47,5 +47,38 @@ function mergeRanges(ranges) {
 const ranges0 = [[0,1], [3,5], [4,8], [10,12], [9,10]];
 const ranges1 = [[1,5], [2,3]];
 
-console.log(mergeRanges(ranges0));
-console.log(mergeRanges(ranges1));
+// console.log(mergeRanges(ranges0));
+// console.log(mergeRanges(ranges1));
+
+
+
+
+// input: an array of characters
+// output: that but reversed (in place)
+
+// strategy:
+// - i starts at 0, j starts at length - 1
+// - swap chars at indices, increment i/decrement j until we get to the middle
+// time complexity: O(n)
+
+function inPlaceReverse(chars) {
+  let i = 0, j = chars.length - 1;
+
+  while (i < j) {
+    let c0 = chars[i];
+    let c1 = chars[j];
+
+    chars[i] = c1;
+    chars[j] = c0;
+    i++;
+    j--;
+  }
+
+  return chars;
+}
+
+const evenChars = ['a','y','y','o'];
+const oddChars = ['h','e','l','l','o'];
+
+console.log(inPlaceReverse(evenChars));
+console.log(inPlaceReverse(oddChars));
