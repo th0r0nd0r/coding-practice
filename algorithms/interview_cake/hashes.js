@@ -91,6 +91,26 @@ function wordCloud(str) {
   return wordCounts;
 }
 
-console.log(wordCloud('After beating the eggs, Dana read the next step:'));
-console.log(wordCloud('Add milk and eggs, then add flour and sugar.'));
-// console.log(wordCloud());
+// console.log(wordCloud('After beating the eggs, Dana read the next step:'));
+// console.log(wordCloud('Add milk and eggs, then add flour and sugar.'));
+
+
+
+// sort a list of integers with a known cap (counting sort)
+function countingSort(nums, k) {
+  const counts = new Array(k).fill(0);
+  const sorted = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    counts[nums[i]]++;
+  }
+  for (let i = 0; i < counts.length; i++) {
+    for (let j = 0; j < counts[i]; j++) {
+      sorted.push(i);
+    }
+  }
+
+  return sorted;
+}
+
+console.log(countingSort([37, 89, 41, 65, 91, 53], 100));
