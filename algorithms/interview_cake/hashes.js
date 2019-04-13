@@ -61,6 +61,36 @@ function permutationPalindrome(str) {
   return true;
 }
 
-console.log(permutationPalindrome("ivicc"));
-console.log(permutationPalindrome("civil"));
-console.log(permutationPalindrome("livci"));
+// console.log(permutationPalindrome("ivicc"));
+// console.log(permutationPalindrome("civil"));
+// console.log(permutationPalindrome("livci"));
+
+
+// make a word cloud out of a string without using regex
+function wordCloud(str) {
+  const words = str.split(' ');
+  const letters = 'abcdefghijklmnopqrstuvwxyz';
+  const wordCounts = {};
+
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i].toLowerCase();
+    if (!letters.includes(word[0])) {
+      word = word.slice(1);
+    }
+    if (!letters.includes(word[word.length - 1])) {
+      word = word.slice(0,word.length - 1);
+    }
+
+    if (wordCounts[word]) {
+      wordCounts[word]++;
+    } else {
+      wordCounts[word] = 1;
+    }
+  }
+
+  return wordCounts;
+}
+
+console.log(wordCloud('After beating the eggs, Dana read the next step:'));
+console.log(wordCloud('Add milk and eggs, then add flour and sugar.'));
+// console.log(wordCloud());
