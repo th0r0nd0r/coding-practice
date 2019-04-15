@@ -34,12 +34,14 @@ function largestProduct(nums) {
   function insertNum(num, top) {
     for (let i = 0; i < top.length; i++) {
       if (num > top[i]) {
+
         if (top.length < 3) {top.length++;}
 
-        for (let j = top.length; j > 0; j--) {
+        for (let j = top.length - 1; j > i; j--) {
           top[j] = top[j - 1];
         }
         top[i] = num;
+        break;
       }
     }
 
@@ -71,3 +73,8 @@ function largestProduct(nums) {
 
   return pos.reduce((prev, curr) => (prev * curr));
 }
+
+// console.log(largestProduct([1,5,-3,8,2]));
+// console.log(largestProduct([1,5,-3,8,-5,2]));
+// console.log(largestProduct());
+// console.log(largestProduct());
