@@ -78,3 +78,30 @@ function largestProduct(nums) {
 // console.log(largestProduct([1,5,-3,8,-5,2]));
 // console.log(largestProduct());
 // console.log(largestProduct());
+
+
+// given a list of integers, find the product of all integers except at the current index, without using division
+function findProducts(nums) {
+  const befores = [1];
+  const afters = [1];
+  let product = 1;
+
+  for (let i = 1; i < nums.length; i++) {
+    let num = nums[i - 1];
+    product *= num;
+    befores.push(product);
+  }
+
+  product = 1;
+
+  for (let i = nums.length - 2; i >= 0; i--) {
+    let num = nums[i + 1];
+    product *= num;
+    afters.shift(product);
+  }
+
+  return befores.map((n, i) => (n * afters[i]));
+}
+
+console.log(findProducts([1, 7, 3, 4]));
+// console.log(findProducts());
