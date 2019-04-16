@@ -81,6 +81,9 @@ function largestProduct(nums) {
 
 
 // given a list of integers, find the product of all integers except at the current index, without using division
+// time complexity: 
+// each pass takes O(n), since we only perform one O(1) multiplication at each num
+// total: O(2n) ~ O(n)
 function findProducts(nums) {
   const befores = [1];
   const afters = [1];
@@ -97,7 +100,7 @@ function findProducts(nums) {
   for (let i = nums.length - 2; i >= 0; i--) {
     let num = nums[i + 1];
     product *= num;
-    afters.shift(product);
+    afters.unshift(product);
   }
 
   return befores.map((n, i) => (n * afters[i]));
