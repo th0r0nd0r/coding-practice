@@ -85,14 +85,13 @@ function largestProduct(nums) {
 // each pass takes O(n), since we only perform one O(1) multiplication at each num
 // total: O(2n) ~ O(n)
 function findProducts(nums) {
-  const befores = [1];
-  const afters = [1];
+  const products = [1];
   let product = 1;
 
   for (let i = 1; i < nums.length; i++) {
     let num = nums[i - 1];
     product *= num;
-    befores.push(product);
+    products.push(product);
   }
 
   product = 1;
@@ -100,10 +99,10 @@ function findProducts(nums) {
   for (let i = nums.length - 2; i >= 0; i--) {
     let num = nums[i + 1];
     product *= num;
-    afters.unshift(product);
+    products[i] *= product;
   }
 
-  return befores.map((n, i) => (n * afters[i]));
+  return products;
 }
 
 console.log(findProducts([1, 7, 3, 4]));
