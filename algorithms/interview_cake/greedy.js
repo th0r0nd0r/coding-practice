@@ -131,15 +131,15 @@ function isRiffle(half1, half2, deck) {
 
 
 // write a function that uniformly shuffles an array in-place
-function randomInt(max) {
-  return Math.floor(Math.random() * max);
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function inPlaceShuffle(arr) {
   for (let i = 0; i < arr.length; i++) {
-    const j = randomInt(arr.length);
-    const el1 = arr[i];
-    const el2 = arr[j];
+    const j = randomInt(i, arr.length);
+    let el1 = arr[i];
+    let el2 = arr[j];
     arr[i] = el2;
     arr[j] = el1;
   }
