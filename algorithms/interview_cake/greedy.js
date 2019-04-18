@@ -107,3 +107,24 @@ function findProducts(nums) {
 
 console.log(findProducts([1, 7, 3, 4]));
 // console.log(findProducts());
+
+
+// given 2 halves of a deck and the shuffled deck, determine if the shuffle was created by a single riffle of those halves
+function isRiffle(half1, half2, deck) {
+  // let c1 = half1[0];
+  // let c2 = half2[0];
+  let idx1 = 0, idx2 = 0;
+
+  for (let i = 0; i < 52; i++) {
+    let currCard = deck[i];
+    if (currCard === half1[idx1]) {
+      idx1++;
+    } else if (currCard === half2[idx2]) {
+      idx2++;
+    } else {
+      return false;
+    }
+  }
+
+  return true;
+}
