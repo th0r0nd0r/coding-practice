@@ -105,7 +105,7 @@ function findProducts(nums) {
   return products;
 }
 
-console.log(findProducts([1, 7, 3, 4]));
+// console.log(findProducts([1, 7, 3, 4]));
 // console.log(findProducts());
 
 
@@ -128,3 +128,23 @@ function isRiffle(half1, half2, deck) {
 
   return true;
 }
+
+
+// write a function that uniformly shuffles an array in-place
+function randomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+function inPlaceShuffle(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    const j = randomInt(arr.length);
+    const el1 = arr[i];
+    const el2 = arr[j];
+    arr[i] = el2;
+    arr[j] = el1;
+  }
+
+  return arr;
+}
+
+console.log(inPlaceShuffle([4,6,8,1,2,4]));
