@@ -44,3 +44,26 @@ function isSuperBalanced(baseNode) {
 
   return (maxHeight - minHeight <= 1);
 }
+
+// ensure that a binary tree is a valid BST
+function isBST(root) {
+  const queue = [root];
+
+  while (queue.length) {
+    const node = queue.pop();
+    if (node.left) {
+      if (node.left.value >= node.value) {
+        return false;
+      }
+      queue.unshift(node.left);
+    }
+    if (node.right) {
+      if (node.right.value < node.value) {
+        return false;
+      }
+      queue.unshift(node.right);
+    }
+  }
+
+  return true;
+}
