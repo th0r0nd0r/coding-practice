@@ -16,7 +16,7 @@ function rotationPoint(words) {
     if (words[i] < first) {
       // point is to the left
       maxIdx = i;
-    } else if (words[i] > first) {
+    } else if (words[i] >= first) {
       // point is to the right
       minIdx = i;
     }
